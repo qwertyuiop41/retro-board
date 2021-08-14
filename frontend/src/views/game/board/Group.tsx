@@ -2,6 +2,8 @@ import { useCallback, useState } from 'react';
 import { PostGroup } from '@retrospected/common';
 import styled from 'styled-components';
 import {
+  Draggable,
+  DraggableProvided,
   Droppable,
   DroppableProvided,
   DroppableStateSnapshot,
@@ -10,6 +12,7 @@ import grey from '@material-ui/core/colors/grey';
 import IconButton from '@material-ui/core/IconButton';
 import {
   Delete,
+  DragIndicator,
   KeyboardArrowDown,
   KeyboardArrowRight,
   Message,
@@ -23,12 +26,14 @@ import { Badge } from '@material-ui/core';
 interface GroupProps {
   group: PostGroup;
   readonly: boolean;
+  index: number;
   onEditLabel: (label: string) => void;
   onDelete: (group: PostGroup) => void;
 }
 
 const Group: React.FC<GroupProps> = ({
   group,
+  index,
   onEditLabel,
   onDelete,
   readonly,
@@ -50,60 +55,78 @@ const Group: React.FC<GroupProps> = ({
     setCollapsed((c) => !c);
   }, []);
   return (
-    <Droppable droppableId={'group#' + group.id} key={group.id} mode="standard">
-      {(
-        dropProvided: DroppableProvided,
-        dropSnapshot: DroppableStateSnapshot
-      ) => (
-        <GroupContainer
-          ref={dropProvided.innerRef}
-          {...dropProvided.droppableProps}
-          draggingOver={dropSnapshot.isDraggingOver}
+    <Draggable
+      draggableId={group.id}
+      index={index}
+      // isDragDisabled={!canReorder}
+    >
+      {(provided: DraggableProvided) => (
+        <Droppable
+          droppableId={'group#' + group.id}
+          key={group.id}
+          mode="standard"
         >
-          <Header collapsed={collapsed}>
-            <Label>
-              <EditableLabel
-                value={decrypt(group.label)}
-                onChange={handleEditLabel}
-                readOnly={readonly}
-              />
-            </Label>
-            <ActionsContainer>
-              {collapsed ? (
-                <Badge
-                  badgeContent={group.posts.length.toString()}
-                  color={group.posts.length ? 'primary' : 'secondary'}
-                  style={{ marginRight: 10 }}
-                >
-                  <Message />
-                </Badge>
-              ) : null}
+          {(
+            dropProvided: DroppableProvided,
+            dropSnapshot: DroppableStateSnapshot
+          ) => (
+            <GroupContainer
+              ref={dropProvided.innerRef}
+              {...dropProvided.droppableProps}
+              {...provided.draggableProps}
+              draggingOver={dropSnapshot.isDraggingOver}
+            >
+              <Header collapsed={collapsed}>
+                <Label>
+                  <EditableLabel
+                    value={decrypt(group.label)}
+                    onChange={handleEditLabel}
+                    readOnly={readonly}
+                  />
+                </Label>
+                <ActionsContainer>
+                  {collapsed ? (
+                    <Badge
+                      badgeContent={group.posts.length.toString()}
+                      color={group.posts.length ? 'primary' : 'secondary'}
+                      style={{ marginRight: 10 }}
+                    >
+                      <Message />
+                    </Badge>
+                  ) : null}
+                  {!collapsed ? (
+                    <IconButton onClick={handleDelete}>
+                      <Delete />
+                    </IconButton>
+                  ) : null}
+                  <IconButton onClick={toggleCollapse}>
+                    {collapsed ? <KeyboardArrowRight /> : <KeyboardArrowDown />}
+                  </IconButton>
+                </ActionsContainer>
+                <DragHandle {...provided.dragHandleProps}>
+                  <DragIndicator />
+                </DragHandle>
+              </Header>
               {!collapsed ? (
-                <IconButton onClick={handleDelete}>
-                  <Delete />
-                </IconButton>
+                <Content>
+                  <div>{children}</div>
+                  {group.posts.length === 0 ? (
+                    <NoPosts>
+                      <Alert severity="info">
+                        <AlertTitle>
+                          {groupTranslations.emptyGroupTitle}
+                        </AlertTitle>
+                        {groupTranslations.emptyGroupContent}
+                      </Alert>
+                    </NoPosts>
+                  ) : null}
+                </Content>
               ) : null}
-              <IconButton onClick={toggleCollapse}>
-                {collapsed ? <KeyboardArrowRight /> : <KeyboardArrowDown />}
-              </IconButton>
-            </ActionsContainer>
-          </Header>
-          {!collapsed ? (
-            <Content>
-              <div>{children}</div>
-              {group.posts.length === 0 ? (
-                <NoPosts>
-                  <Alert severity="info">
-                    <AlertTitle>{groupTranslations.emptyGroupTitle}</AlertTitle>
-                    {groupTranslations.emptyGroupContent}
-                  </Alert>
-                </NoPosts>
-              ) : null}
-            </Content>
-          ) : null}
-        </GroupContainer>
+            </GroupContainer>
+          )}
+        </Droppable>
       )}
-    </Droppable>
+    </Draggable>
   );
 };
 
@@ -142,6 +165,15 @@ const NoPosts = styled.div`
   justify-self: center;
   color: grey;
   margin: 30px;
+`;
+
+const DragHandle = styled.div`
+  cursor: move;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  visibility: hidden;
+  color: ${grey[500]};
 `;
 
 export default Group;
