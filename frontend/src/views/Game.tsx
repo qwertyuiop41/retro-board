@@ -13,7 +13,12 @@ import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Button from '@mui/material/Button';
-import { colors } from '@mui/material';
+import {
+  BottomNavigation,
+  BottomNavigationAction,
+  colors,
+  Paper,
+} from '@mui/material';
 import { Dashboard, List, CloudOff } from '@mui/icons-material';
 import useTranslations from '../translations';
 import useGame from './game/useGame';
@@ -23,11 +28,12 @@ import useColumns from './game/useColumns';
 import NoContent from '../components/NoContent';
 import useCrypto from '../crypto/useCrypto';
 import Unauthorized from './game/Unauthorized';
-import SearchBar from './game/SearchBar';
+import SearchBar from './header/SearchBar';
 import Participants from './game/Participants';
 import AckWarning from './game/AckWarning';
 import useUnauthorised from './game/useUnauthorised';
 import useSession from './game/useSession';
+import useSearch from './header/useSearch';
 
 interface RouteParams {
   gameId: string;
@@ -44,10 +50,10 @@ function GamePage() {
   const handleChange = useCallback((_, v) => history.push(v), [history]);
   const columns = useColumns();
   const { decrypt } = useCrypto();
-  const [search, setSearch] = useState('');
   const { unauthorised, unauthorisedReason } = useUnauthorised();
   const rootUrl = `${match.url}${hash}`;
   const summaryUrl = `${match.url}/summary${hash}`;
+  const search = useSearch();
 
   const path = pathname + hash;
 
@@ -126,30 +132,7 @@ function GamePage() {
         </DisconnectedContainer>
       ) : null}
       <AppBar position="static" color="default">
-        <AppBarContent>
-          <Tabs
-            value={path}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons
-            indicatorColor="primary"
-            textColor="primary"
-            aria-label="Game mode tabs"
-            allowScrollButtonsMobile
-          >
-            <Tab label={GameMenu.board} icon={<Dashboard />} value={rootUrl} />
-            {!session.options.blurCards ? (
-              <Tab
-                label={GameMenu.summary}
-                icon={<List />}
-                value={summaryUrl}
-              />
-            ) : null}
-          </Tabs>
-          <SearchContent>
-            <SearchBar value={search} onChange={setSearch} />
-          </SearchContent>
-        </AppBarContent>
+        <AppBarContent></AppBarContent>
       </AppBar>
       <AckWarning acks={acks} onRefresh={reconnect} />
       <Route
@@ -183,13 +166,32 @@ function GamePage() {
           render={() => <SummaryMode columns={columns} search={search} />}
         />
       ) : null}
-      <ParticipantContainer>
+      {/* <ParticipantContainer>
         <Participants
           onReady={onUserReady}
           messages={session.messages}
           onMessage={onChatMessage}
         />
-      </ParticipantContainer>
+      </ParticipantContainer> */}
+      <Paper
+        sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}
+        elevation={3}
+      >
+        <BottomNavigation showLabels value={path} onChange={handleChange}>
+          <BottomNavigationAction
+            label={GameMenu.board}
+            icon={<Dashboard />}
+            value={rootUrl}
+          />
+          {!session.options.blurCards ? (
+            <BottomNavigationAction
+              label={GameMenu.summary}
+              icon={<List />}
+              value={summaryUrl}
+            />
+          ) : null}
+        </BottomNavigation>
+      </Paper>
     </div>
   );
 }

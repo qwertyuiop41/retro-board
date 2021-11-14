@@ -1,23 +1,13 @@
-import { useEffect, useCallback, lazy, Suspense } from 'react';
+import { useEffect, lazy, Suspense } from 'react';
 import { useHistory, Redirect, Switch, Route } from 'react-router-dom';
 import { trackPageView } from './track';
-import styled from '@emotion/styled';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import MenuIcon from '@mui/icons-material/Menu';
-import AccountMenu from './auth/AccountMenu';
 import useIsCompatibleBrowser from './hooks/useIsCompatibleBrowser';
 import OutdatedBrowser from './components/OutdatedBrowser';
-import useIsInitialised from './auth/useIsInitialised';
 import useUser from './auth/useUser';
-import { HomeOutlined } from '@mui/icons-material';
-import ProPill from './components/ProPill';
 import { CodeSplitLoader } from './CodeSplitLoader';
-import useSidePanel from './views/panel/useSidePanel';
 import { Alert, AlertTitle } from '@mui/material';
 import useBackendCapabilities from './global/useBackendCapabilities';
+import Header from './views/header/Header';
 
 const Home = lazy(() => import('./views/Home' /* webpackChunkName: "home" */));
 const Game = lazy(() => import('./views/Game' /* webpackChunkName: "game" */));
@@ -62,9 +52,6 @@ const CookiesPolicyPage = lazy(
 const TermsAndConditionsPage = lazy(
   () => import('./views/policies/Terms' /* webpackChunkName: "terms" */)
 );
-const Invite = lazy(
-  () => import('./views/layout/Invite' /* webpackChunkName: "invite" */)
-);
 const PrivacyPolicyPage = lazy(
   () => import('./views/policies/Privacy' /* webpackChunkName: "privacy" */)
 );
@@ -79,18 +66,11 @@ const AdminPage = lazy(
   () => import('./views/admin/AdminPage' /* webpackChunkName: "admin-page" */)
 );
 
-const Title = styled(Typography)`
-  color: white;
-`;
-
 function App() {
   const history = useHistory();
   const backend = useBackendCapabilities();
   const isCompatible = useIsCompatibleBrowser();
-  const { toggle: togglePanel } = useSidePanel();
-  const isInitialised = useIsInitialised();
   const user = useUser();
-  const goToHome = useCallback(() => history.push('/'), [history]);
   useEffect(() => {
     trackPageView(window.location.pathname);
     const unregister = history.listen((location) => {
@@ -118,40 +98,7 @@ function App() {
           administration panel.
         </Alert>
       ) : null}
-      <AppBar position="sticky">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="Menu"
-            onClick={togglePanel}
-            size="large"
-          >
-            <MenuIcon />
-          </IconButton>
-          <HomeButton>
-            <IconButton
-              color="inherit"
-              aria-label="Home"
-              onClick={goToHome}
-              size="large"
-            >
-              <HomeOutlined />
-            </IconButton>
-          </HomeButton>
-          <MainTitle variant="h6" color="inherit" onClick={goToHome}>
-            Retrospected&nbsp;
-          </MainTitle>
-          <ProPillContainer>
-            <ProPill small />
-          </ProPillContainer>
-          <Route path="/game/:gameId" component={Invite} />
-          {isInitialised ? (
-            <AccountMenu />
-          ) : (
-            <Initialising>Loading...</Initialising>
-          )}
-        </Toolbar>
-      </AppBar>
+      <Header />
       <Suspense fallback={<CodeSplitLoader />}>
         <Switch>
           <Route path="/" exact>
@@ -180,23 +127,5 @@ function App() {
     </div>
   );
 }
-
-const MainTitle = styled(Title)`
-  cursor: pointer;
-  margin-right: 10px;
-  @media screen and (max-width: 600px) {
-    display: none;
-  }
-`;
-
-const HomeButton = styled.div`
-  margin-right: 10px;
-`;
-
-const ProPillContainer = styled.div`
-  flex: 1;
-`;
-
-const Initialising = styled.div``;
 
 export default App;
