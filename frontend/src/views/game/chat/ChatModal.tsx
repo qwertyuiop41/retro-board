@@ -27,6 +27,7 @@ const Container = styled.div`
   max-width: 400px;
   display: flex;
   flex-flow: column;
+  // height: calc(100vh - 180px);
 
   @media (max-width: 800px) {
     max-width: unset;

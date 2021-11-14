@@ -20,8 +20,8 @@ import useModal from '../../hooks/useModal';
 import ChatModal from './chat/ChatModal';
 
 type ParticipantsProps = {
-  onReady: () => void;
   messages: Message[];
+  onReady: () => void;
   onMessage: (content: string) => void;
 };
 

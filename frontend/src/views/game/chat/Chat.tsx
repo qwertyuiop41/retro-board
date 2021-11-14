@@ -30,7 +30,7 @@ export default function Chat({ messages, onMessage }: ChatProps) {
 }
 
 const ScrollContainer = styled(ScrollToBottom)`
-  height: calc(100vh - 200px);
+  height: calc(100vh - 300px);
   flex: 1 1 auto;
 `;
 
