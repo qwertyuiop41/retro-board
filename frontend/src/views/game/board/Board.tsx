@@ -23,6 +23,7 @@ import {
 import { getNext, getMiddle, getPrevious } from '../lexorank';
 import BoardHeader from './header/BoardHeader';
 import useSession from '../useSession';
+import AdminBar from './header/AdminBar';
 
 interface GameModeProps {
   columns: ColumnContent[];
@@ -132,47 +133,50 @@ function GameMode({
   }
 
   return (
-    <Page>
-      <BoardHeader
-        onEditColumns={onEditColumns}
-        onEditOptions={onEditOptions}
-        onSaveTemplate={onSaveTemplate}
-        onLockSession={onLockSession}
-        onRenameSession={onRenameSession}
-      />
-      <DragDropContext onDragEnd={handleOnDragEnd}>
-        <Columns numberOfColumns={columns.length}>
-          {columns.map((column) => (
-            <Column
-              key={column.index}
-              column={column}
-              search={search}
-              posts={column.posts}
-              groups={column.groups}
-              question={column.label}
-              icon={getIcon(column.icon)}
-              color={column.color}
-              onAdd={(content) =>
-                onAddPost(
-                  column.index,
-                  content,
-                  calculateRankForNewPost(column, options.newPostsFirst)
-                )
-              }
-              onAddGroup={() =>
-                onAddGroup(column.index, calculateRankForNewGroup(column))
-              }
-              onDelete={onDeletePost}
-              onLike={(post) => onLike(post, true)}
-              onDislike={(post) => onLike(post, false)}
-              onEdit={onEdit}
-              onEditGroup={onEditGroup}
-              onDeleteGroup={onDeleteGroup}
-            />
-          ))}
-        </Columns>
-      </DragDropContext>
-    </Page>
+    <>
+      <AdminBar />
+      <Page>
+        <BoardHeader
+          onEditColumns={onEditColumns}
+          onEditOptions={onEditOptions}
+          onSaveTemplate={onSaveTemplate}
+          onLockSession={onLockSession}
+          onRenameSession={onRenameSession}
+        />
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Columns numberOfColumns={columns.length}>
+            {columns.map((column) => (
+              <Column
+                key={column.index}
+                column={column}
+                search={search}
+                posts={column.posts}
+                groups={column.groups}
+                question={column.label}
+                icon={getIcon(column.icon)}
+                color={column.color}
+                onAdd={(content) =>
+                  onAddPost(
+                    column.index,
+                    content,
+                    calculateRankForNewPost(column, options.newPostsFirst)
+                  )
+                }
+                onAddGroup={() =>
+                  onAddGroup(column.index, calculateRankForNewGroup(column))
+                }
+                onDelete={onDeletePost}
+                onLike={(post) => onLike(post, true)}
+                onDislike={(post) => onLike(post, false)}
+                onEdit={onEdit}
+                onEditGroup={onEditGroup}
+                onDeleteGroup={onDeleteGroup}
+              />
+            ))}
+          </Columns>
+        </DragDropContext>
+      </Page>
+    </>
   );
 }
 
