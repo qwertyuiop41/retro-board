@@ -19,6 +19,7 @@ import ProButton from '../components/ProButton';
 import { useSnackbar } from 'notistack';
 import TrialPrompt from './home/TrialPrompt';
 import HowDoesItWorkButton from '../components/HowDoesItWorkButton';
+import { useTranslation } from 'react-i18next';
 
 const useStyles = makeStyles({
   media: {
@@ -39,6 +40,7 @@ function Home() {
   const user = useUser();
   const isLoggedIn = !!user;
   const translations = useTranslations();
+  const { t } = useTranslation();
   const { enqueueSnackbar } = useSnackbar();
   const [previousSessions, refreshPreviousSessions] = usePreviousSessions();
   const hasPreviousSessions = previousSessions.length > 0;
@@ -84,6 +86,7 @@ function Home() {
       <TrialPrompt />
       <Page>
         <MainHeader>{translations.Home.welcome!(user?.name || '')}</MainHeader>
+        <MainHeader>{t('home.welcome')}</MainHeader>
 
         <LaunchButtons>
           <ProButton quota>
