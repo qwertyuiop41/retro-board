@@ -86,7 +86,7 @@ function Home() {
       <TrialPrompt />
       <Page>
         <MainHeader>{translations.Home.welcome!(user?.name || '')}</MainHeader>
-        <MainHeader>{t('home.welcome')}</MainHeader>
+        <MainHeader>{t('home.welcome', { name: user?.name || '' })}</MainHeader>
 
         <LaunchButtons>
           <ProButton quota>

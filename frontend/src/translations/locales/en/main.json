@@ -1,5 +1,5 @@
 {
 	"home": {
-		"welcome": "I'm english"
+		"welcome": "Welcome, {{name}}!"
 	}
 }
