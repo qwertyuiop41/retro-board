@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { setItem } from '../utils/localStorage';
 import { updateLanguage } from 'api';
 import UserContext from 'auth/Context';
+import { trackEvent } from 'track';
+import { TrackingEvent } from 'common';
 
 type UseLanguageResult = [
   language: Language,
@@ -22,6 +24,7 @@ export default function useLanguage(): UseLanguageResult {
 
   const handleChangeLanguage = useCallback(
     async (language: string) => {
+      trackEvent(`language/change/${language}` as TrackingEvent);
       setItem('language', language);
       i18n.changeLanguage(language);
       const updatedUser = await updateLanguage(language);

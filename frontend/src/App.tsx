@@ -4,6 +4,7 @@ import { Global } from '@emotion/react';
 import { ThemeProvider } from '@mui/material';
 import globalCss from './GlobalStyles';
 import AuthProvider from './auth/AuthProvider';
+import LanguageProvider from './translations/LanguageProvider';
 import theme from './Theme';
 import Layout from './Layout';
 import ErrorBoundary from './ErrorBoundary';
@@ -40,14 +41,16 @@ function App() {
               <BrowserRouter>
                 <GlobalProvider>
                   <AuthProvider>
-                    <QuotaManager>
-                      <Global styles={globalCss} />
-                      <ErrorBoundary>
-                        <Suspense fallback={<CodeSplitLoader />}>
-                          <Layout />
-                        </Suspense>
-                      </ErrorBoundary>
-                    </QuotaManager>
+                    <LanguageProvider>
+                      <QuotaManager>
+                        <Global styles={globalCss} />
+                        <ErrorBoundary>
+                          <Suspense fallback={<CodeSplitLoader />}>
+                            <Layout />
+                          </Suspense>
+                        </ErrorBoundary>
+                      </QuotaManager>
+                    </LanguageProvider>
                   </AuthProvider>
                 </GlobalProvider>
               </BrowserRouter>
