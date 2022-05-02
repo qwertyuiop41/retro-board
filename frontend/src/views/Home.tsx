@@ -5,7 +5,6 @@ import Fab from '@mui/material/Fab';
 import { makeStyles } from '@mui/styles';
 import { colors } from '@mui/material';
 import { Lock, ThumbUpAlt } from '@mui/icons-material';
-import useTranslations from '../translations';
 import PreviousGames from './home/PreviousGames';
 import { SessionMetadata } from 'common';
 import { trackEvent } from './../track';
@@ -39,7 +38,6 @@ function Home() {
   const navigate = useNavigate();
   const user = useUser();
   const isLoggedIn = !!user;
-  const translations = useTranslations();
   const { t } = useTranslation();
   const { enqueueSnackbar } = useSnackbar();
   const [previousSessions, refreshPreviousSessions] = usePreviousSessions();
@@ -85,8 +83,7 @@ function Home() {
     <>
       <TrialPrompt />
       <Page>
-        <MainHeader>{translations.Home.welcome!(user?.name || '')}</MainHeader>
-        <MainHeader>{t('home.welcome', { name: user?.name || '' })}</MainHeader>
+        <MainHeader>{t('Home.welcome', { name: user?.name || '' })}</MainHeader>
 
         <LaunchButtons>
           <ProButton quota>
@@ -99,7 +96,7 @@ function Home() {
               data-cy="new-session-button"
             >
               <ThumbUpAlt className={classes.buttonIcon} />
-              {translations.Join.standardTab.button}
+              {t('Join.standardTab.button')}
             </Fab>
           </ProButton>
           <div style={{ width: 30 }} />
@@ -113,7 +110,7 @@ function Home() {
                 disabled={!isLoggedIn}
               >
                 <Lock className={classes.buttonIcon} />
-                {translations.Encryption.createEncryptedSession}
+                {t('Encryption.createEncryptedSession')}
               </Fab>
             </ProButton>
           </HowDoesItWorkButton>
@@ -121,7 +118,7 @@ function Home() {
 
         {hasPreviousSessions ? (
           <>
-            <SubHeader>{translations.Join.previousTab.header}</SubHeader>
+            <SubHeader>{t('Join.previousTab.header')}</SubHeader>
             <PreviousGames
               games={previousSessions}
               onDelete={handleDeleteSession}

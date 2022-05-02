@@ -14,14 +14,18 @@
     "hint": "You can invite others to this session by copy-pasting the URL"
   },
   "Home": {
-    "welcome": "function!"
+    "welcome": "Welcome, {name}"
   },
   "PreviousGame": {
     "createdBy": "Created by",
-    "posts": "function!",
-    "participants": "function!",
-    "votes": "function!",
-    "actions": "function!"
+    "posts_one": "post",
+    "posts_other": "posts",
+    "participants_one": "participant",
+    "participants_other": "participants",
+    "votes_one": "vote",
+    "votes_other": "votes",
+    "actions_one": "action",
+    "actions_other": "actions"
   },
   "Column": {
     "createGroupTooltip": "Create a group to group posts together"
@@ -42,9 +46,9 @@
     "by": "by",
     "upVote": "up-vote",
     "downVote": "down-vote",
-    "voteRemainingMultiple": "function!",
-    "voteRemainingOne": "function!",
-    "voteRemainingNone": "function!",
+    "voteRemainingMultiple": "You have {number} {type}s remaining.",
+    "voteRemainingOne": "You only have one {type} remaining, make it count!",
+    "voteRemainingNone": "You don't have any {type} remaining.",
     "toggleGiphyButton": "Toggle Giphy image"
   },
   "Customize": {
@@ -107,11 +111,22 @@
     "disconnected": "You have been disconnected from the current session.",
     "reconnect": "Reconnect",
     "notLoggedIn": "You are not logged in. You can view this session as a spectator, but must login to participate.",
-    "error": "function!",
+    "error_action_unauthorised": "You are not allowed to perform this action.",
+  "error_cannot_edit_group": "Editing the group failed.",
+  "error_cannot_edit_post": "Editing the post failed.",
+  "error_cannot_get_session": "Could not get the session data. Please reload the page.",
+  "error_cannot_register_vote": "Your vote was not registered successfully.",
+  "error_cannot_save_group": "The group you created could not be saved.",
+  "error_cannot_save_post": "The post you created could not be saved.",
+  "error_cannot_delete_group": "The group could not be deleted",
+  "error_cannot_delete_post": "The post could not be deleted",
+  "error_cannot_rename_session": "Renaming the session failed",
+  "error_cannot_save_columns": "Saving columns failed",
+  "error_cannot_save_options": "Saving options failed",
     "maxPostsReached": "You have reached the maximum number of posts set by the moderator.",
     "iAmDone": "I'm done!",
     "iAmNotDoneYet": "I'm not done yet...",
-    "userIsReady": "function!"
+    "userIsReady": "{user} is ready!"
   },
   "GameMenu": {
     "board": "Board",
@@ -126,8 +141,8 @@
   },
   "Clients": {
     "header": "Participants:",
-    "joined": "function!",
-    "left": "function!"
+    "joined": "{users} joined.",
+    "left": "{users} left."
   },
   "Join": {
     "welcome": "Welcome to Retrospected",
@@ -232,7 +247,7 @@
     "title": "Action"
   },
   "DeleteSession": {
-    "header": "function!",
+    "header": "Deleting '{name}'?",
     "firstLine": "Deleting a session is irreversible. It will delete all posts, votes, groups, and the session itself. The data cannot be restored.",
     "secondLine": "Are you sure you want to delete this session and all its content?",
     "yesImSure": "Yes, I'm sure",
@@ -264,13 +279,13 @@
       "manageButton": "Manage my subscription",
       "membersEditor": {
         "title": "Your Team",
-        "limitReached": "function!",
-        "info": "function!"
+        "limitReached": "You reached the limit of your subscription ({limit} users, including yourself). Please remove members, or upgrade to an unlimited Company account.",
+        "info": "Add emails below to grant Pro accounts to up to {limit} other colleagues. Press Enter after each email address."
       }
     },
     "trial": {
       "header": "Your Trial",
-      "yourTrialWillExpireIn": "function!",
+      "yourTrialWillExpireIn": "Your trial will end in {date}.",
       "subscribe": "Subscribe now"
     },
     "deleteAccount": {
@@ -313,7 +328,7 @@
     "currency": {
       "title": "Currency",
       "description": "Pick a currency you would like to be billed with",
-      "warning": "function!"
+      "warning": "Your account is already set to use {currency}, so you cannot change the currency anymore."
     },
     "plan": {
       "title": "Plan",
@@ -358,7 +373,7 @@
     "team": "Perfect for smaller teams, you can select up to 20 colleagues who will be upgraded to a Pro account.",
     "unlimited": "If you are a bigger company, you will enjoy an unlimited number of Pro accounts.",
     "self-hosted": "Retrospected on premises, one-time fee and unlimited updates. Keep total control of your data, for ever.",
-    "users": "function!",
+    "users": "{users} users",
     "unlimited_seats": "Unlimited",
     "month": "month",
     "year": "year",
@@ -371,7 +386,7 @@
     "sessionEncryptedNoKeyTooltip": "This session is encrypted, and the key is not stored in your browser. You will be asked for the decryption key when opening this session.",
     "sessionEncryptedWrongKeyTooltip": "This session is encrypted, and the key you have stored is not the correct key.",
     "newEncryptedSessionWarningTitle": "This session is encrypted locally",
-    "newEncryptedSessionWarningContent": "function!",
+    "newEncryptedSessionWarningContent": "It is very important for you to save the full URL (which contains the key) somewhere safe, or at least the encryption key: {key}. If you lose this encryption key, there is nothing that can be done to retrieve the data.",
     "sessionEncryptionError": "This session is encrypted, and you don't seem to have the decryption key stored locally. Please use the original link, including the decryption key.",
     "passwordModalTitle": "Encrypted Session - Enter Password",
     "passwordModelIncorrect": "The encryption key is incorrect."
@@ -395,9 +410,9 @@
     "allowanceReachedTitle": "You have reached your free allowance",
     "allowanceReachedDescription": "In order to get unlimited posts, please  subscribe to Retrospected Pro",
     "nearEndAllowanceTitle": "You are nearing the end of your quota",
-    "nearEndAllowanceDescription": "function!",
+    "nearEndAllowanceDescription": "You have about {quota} posts left",
     "onTrialTitle": "Retrospected Pro - Trial",
-    "remainingTrialSentence": "function!",
+    "remainingTrialSentence": "You have {remaining} left on your trial.",
     "trialEndedTitle": "Your Retrospected Pro Trial has ended",
     "trialEndedSentence": "Subscribe today to regain access to the Pro features.",
     "subscribeNow": "Subscribe now!"
