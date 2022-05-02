@@ -58,6 +58,7 @@ const PreviousGameItem = ({
     setDeleteDialogOpen(false);
   }, []);
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
+
   return (
     <>
       <Card onClick={handleClick} raised={hover} ref={hoverRef}>
@@ -96,7 +97,7 @@ const PreviousGameItem = ({
           <Stats>
             <ItemStat
               value={session.numberOfPosts}
-              label={t('PreviousGame.posts', { count: session.numberOfPosts })}
+              label={t('PreviousGame.posts', { count: +session.numberOfPosts })}
               color={colors.green[500]}
             />
             <ItemStat
@@ -108,13 +109,13 @@ const PreviousGameItem = ({
             />
             <ItemStat
               value={session.numberOfVotes}
-              label={t('PreviousGame.votes', { count: session.numberOfVotes })}
+              label={t('PreviousGame.votes', { count: +session.numberOfVotes })}
               color={colors.red[500]}
             />
             <ItemStat
               value={session.numberOfActions}
               label={t('PreviousGame.actions', {
-                count: session.numberOfActions,
+                count: +session.numberOfActions,
               })}
               color={colors.amber[500]}
             />
