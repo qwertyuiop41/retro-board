@@ -14,14 +14,14 @@
     "hint": "Puoi invitare altre persone a questa sessione copiando ed incollando la URL"
   },
   "Home": {
-    "welcome": "function!"
+    "welcome": "null"
   },
   "PreviousGame": {
     "createdBy": "Creato da",
-    "posts": "function!",
-    "participants": "function!",
-    "votes": "function!",
-    "actions": "function!"
+    "posts": "null",
+    "participants": "null",
+    "votes": "null",
+    "actions": "null"
   },
   "Column": {
     "createGroupTooltip": "Crea un gruppo per raggruppare i post"
@@ -42,9 +42,9 @@
     "by": "da",
     "upVote": "mi piace",
     "downVote": "non mi piace",
-    "voteRemainingMultiple": "function!",
-    "voteRemainingOne": "function!",
-    "voteRemainingNone": "function!",
+    "voteRemainingMultiple": "null",
+    "voteRemainingOne": "null",
+    "voteRemainingNone": "null",
     "toggleGiphyButton": "Toggle immagine Giphy"
   },
   "Customize": {

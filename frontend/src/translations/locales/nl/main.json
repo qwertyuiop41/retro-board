@@ -14,14 +14,14 @@
     "hint": "Je kan anderen uitnodigen voor deze sessie door de URL te kopiëren en te plakken"
   },
   "Home": {
-    "welcome": "function!"
+    "welcome": "null"
   },
   "PreviousGame": {
     "createdBy": "Aangemaakt door",
-    "posts": "function!",
-    "participants": "function!",
-    "votes": "function!",
-    "actions": "function!"
+    "posts": "null",
+    "participants": "null",
+    "votes": "null",
+    "actions": "null"
   },
   "Column": {
     "createGroupTooltip": "Creeër een groep om retropunten te bundelen"
@@ -42,9 +42,9 @@
     "by": "door",
     "upVote": "up-vote",
     "downVote": "down-vote",
-    "voteRemainingMultiple": "function!",
-    "voteRemainingOne": "function!",
-    "voteRemainingNone": "function!",
+    "voteRemainingMultiple": "null",
+    "voteRemainingOne": "null",
+    "voteRemainingNone": "null",
     "toggleGiphyButton": "Aan- en uitschakelen Giphy afbeelding"
   },
   "Customize": {

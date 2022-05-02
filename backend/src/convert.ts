@@ -22,7 +22,7 @@ function replace(obj: any) {
     if (obj[field] === undefined) {
       obj[field] = null;
     } else if (typeof obj[field] === 'function') {
-      obj[field] = 'function!';
+      obj[field] = 'null';
     } else if (typeof obj[field] === 'object') {
       replace(obj[field]);
     }

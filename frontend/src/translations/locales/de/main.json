@@ -42,9 +42,9 @@
     "by": "von",
     "upVote": "up-vote",
     "downVote": "down-vote",
-    "voteRemainingMultiple": "function!",
-    "voteRemainingOne": "function!",
-    "voteRemainingNone": "function!",
+    "voteRemainingMultiple": null,
+    "voteRemainingOne": null,
+    "voteRemainingNone": "null",
     "toggleGiphyButton": null
   },
   "Customize": {
