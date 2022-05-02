@@ -50,7 +50,7 @@ function SubscriberPage() {
   const [domain, setDomain] = useState<string>(DEFAULT_DOMAIN);
   const stripe = useStripe();
   const { t } = useTranslation();
-  const language = useLanguage();
+  const [language] = useLanguage();
   const needDomain = product && product.plan === 'unlimited';
   const needLogin =
     !!product &&

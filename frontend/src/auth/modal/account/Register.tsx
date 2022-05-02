@@ -31,7 +31,7 @@ const PasswordStrength = lazy(
 
 const Register = ({ onClose }: RegisterProps) => {
   const { t } = useTranslation();
-  const language = useLanguage();
+  const [language] = useLanguage();
   const [registerName, setRegisterName] = useState('');
   const [registerEmail, setRegisterEmail] = useState('');
   const [registerPassword, setRegisterPassword] = useState('');

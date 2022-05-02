@@ -1,11 +1,10 @@
-import { useContext } from 'react';
 import styled from '@emotion/styled';
 import { Route, Link as RouterLink, Routes } from 'react-router-dom';
 import { colors } from '@mui/material';
 import Drawer from '@mui/material/Drawer';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
-import { LanguageContext } from '../translations';
+import { useLanguage } from '../translations';
 import LanguagePicker from '../components/LanguagePicker';
 import ParticipantsList from './panel/ParticipantsList';
 import config from '../utils/getConfig';
@@ -25,17 +24,14 @@ const policies: Policy[] = [
 ];
 
 function Panel() {
-  const languageContext = useContext(LanguageContext);
+  const [language, setLanguage] = useLanguage();
   const { opened, toggle } = useSidePanel();
 
   return (
     <Drawer open={opened} onClose={toggle} data-cy="side-panel">
       <DrawerContent>
         <Top>
-          <LanguagePicker
-            value={languageContext.language}
-            onChange={languageContext.setLanguage}
-          />
+          <LanguagePicker value={language.value} onChange={setLanguage} />
           <Content>
             <Routes>
               <Route path="/game/:gameId" element={<ParticipantsList />} />

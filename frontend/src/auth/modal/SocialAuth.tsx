@@ -29,7 +29,7 @@ function SocialAuth({ onClose, onUser }: SocialAuthProps) {
   const windowRef = useRef<Window | null>(null);
   const { t } = useTranslation();
   const { details } = useOAuthAvailabilities();
-  const language = useLanguage();
+  const [language] = useLanguage();
   const handleOAuth = useCallback(
     (provider: string) => {
       const width = 600;

@@ -2,6 +2,7 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import resourcesToBackend from 'i18next-resources-to-backend';
+import config from 'utils/getConfig';
 
 // don't want to use this?
 // have a look at the Quick start guide
@@ -27,7 +28,7 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    fallbackLng: 'en',
+    fallbackLng: config.defaultLanguage,
     debug: true,
     defaultNS: 'main',
     ns: 'main',
