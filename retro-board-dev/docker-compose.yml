@@ -4,8 +4,6 @@ services:
     image: redis:latest
     ports:
       - '6379:6379'
-    depends_on:
-      - postgres
     restart: unless-stopped
     logging:
       driver: 'json-file'
@@ -14,6 +12,14 @@ services:
 
   postgres:
     image: postgres:11.6
+    depends_on:
+      - redis
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "retroboard", "-U", "postgres" ]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+      timeout: 10s
     hostname: postgres
     ports:
       - '5432:5432'
@@ -32,7 +38,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4:4.15 # use biarms/pgadmin4 on ARM
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - '5433:80' # Change 8080 to whatever port you want to access pgAdmin from
     environment:

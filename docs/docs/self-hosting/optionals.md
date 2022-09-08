@@ -21,7 +21,8 @@ services:
   backend:
     image: retrospected/backend:latest
     depends_on:
-      - redis
+      postgres:
+        condition: service_healthy
     environment:
       # -- Change Recommended --
       LICENCE_KEY: # This must be provided if you self-host Retrospected. Obtain a licence at https://www.retrospected.com/subscribe?product=self-hosted.
@@ -122,8 +123,6 @@ services:
 
   redis:
     image: redis:latest
-    depends_on:
-      - postgres
     restart: unless-stopped
     logging:
       driver: 'json-file'
@@ -132,6 +131,14 @@ services:
 
   postgres:
     image: postgres:11.6
+    depends_on:
+      - redis
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "retroboard", "-U", "postgres" ]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+      timeout: 10s
     hostname: postgres
     environment:
       #  -- Change Recommended --
@@ -151,7 +158,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4:4.15 # use biarms/pgadmin4 on ARM
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - '8080:80' # Change the first 8080 to whatever port you want to access pgAdmin from
     environment:

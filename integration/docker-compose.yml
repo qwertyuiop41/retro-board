@@ -2,6 +2,14 @@ version: '3'
 services:
   postgres:
     image: postgres:11.6
+    depends_on:
+      - redis
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "retroboard", "-U", "postgres" ]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+      timeout: 10s
     hostname: postgres
     environment:
       POSTGRES_PASSWORD: some-password
@@ -18,7 +26,8 @@ services:
   backend:
     image: retrospected/backend:local
     depends_on:
-      - redis
+      postgres:
+        condition: service_healthy
     environment:
       SELF_HOSTED_ADMIN: 'your@email.com'
       DB_PASSWORD: some-password
@@ -44,8 +53,6 @@ services:
 
   redis:
     image: redis:latest
-    depends_on:
-      - postgres
     restart: unless-stopped
     logging:
       driver: 'json-file'

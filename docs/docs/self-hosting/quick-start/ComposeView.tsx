@@ -94,7 +94,8 @@ services:
   backend:
     image: retrospected/backend:latest
     depends_on:
-      - redis
+      postgres:
+        condition: service_healthy
     environment:
       LICENCE_KEY: '${licence}'
       SELF_HOSTED_ADMIN: '${email}'
@@ -111,6 +112,14 @@ ${optionals.join('\n')}
   postgres:
     image: postgres:11.6
     hostname: postgres
+    depends_on:
+      - redis
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "retroboard", "-U", "postgres" ]
+      interval: 10s
+      retries: 10
+      start_period: 5s
+      timeout: 10s
     environment:
       POSTGRES_PASSWORD: '${dbPassword}'
       POSTGRES_USER: postgres
@@ -126,7 +135,8 @@ ${optionals.join('\n')}
   pgadmin:
     image: ${!arm ? 'dpage/pgadmin4:4.15' : 'biarms/pgadmin4'}
     depends_on:
-      - postgres
+      postgres:
+        condition: service_healthy
     ports:
       - '${pgPort}:80'
     environment:
@@ -142,8 +152,6 @@ ${optionals.join('\n')}
 
   redis:
     image: redis:latest
-    depends_on:
-      - postgres
     restart: unless-stopped
     logging:
       driver: 'json-file'
