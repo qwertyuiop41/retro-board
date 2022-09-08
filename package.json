@@ -40,6 +40,6 @@
   },
   "homepage": "https://www.retrospected.com",
   "dependencies": {
-    "del-cli": "4.0.1"
+    "del-cli": "5.0.0"
   }
 }
