@@ -17,6 +17,7 @@ export const backendCapabilitiesState = atom<BackendCapabilities>({
       microsoft: false,
       slack: false,
       okta: false,
+      custom: false,
     },
     emailAvailable: false,
   },

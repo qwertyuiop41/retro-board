@@ -6,6 +6,7 @@ import { Strategy as GithubStrategy } from 'passport-github2';
 import { Strategy as SlackStrategy } from 'passport-slack-oauth2';
 import { Strategy as MicrosoftStrategy } from 'passport-microsoft';
 import { Strategy as OktaStrategy } from 'passport-okta-oauth20';
+import { Strategy as OAuth2Strategy } from 'passport-oauth2';
 
 import {
   TWITTER_CONFIG,
@@ -14,6 +15,7 @@ import {
   MICROSOFT_CONFIG,
   SLACK_CONFIG,
   OKTA_CONFIG,
+  CUSTOM_OAUTH2_CONFIG,
 } from './config';
 import { AccountType } from '../common';
 import chalk from 'chalk';
@@ -219,6 +221,11 @@ export default () => {
   if (OKTA_CONFIG) {
     passport.use(new OktaStrategy(OKTA_CONFIG, callback('okta')));
     logSuccess('Okta');
+  }
+
+  if (CUSTOM_OAUTH2_CONFIG) {
+    passport.use(new OAuth2Strategy(CUSTOM_OAUTH2_CONFIG, callback('custom')));
+    logSuccess('Custom');
   }
 
   passport.use(

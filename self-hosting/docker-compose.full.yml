@@ -88,6 +88,11 @@ services:
       OKTA_AUDIENCE:
       OKTA_KEY:
       OKTA_SECRET:
+      # Custom OAuth2 Settings (for company OAuth schemes)
+      OAUTH2_AUTHORIZATION_URL:
+      OAUTH2_TOKEN_URL:
+      OAUTH2_CLIENT_ID:
+      OAUTH2_CLIENT_SECRET:
 
       # -- Do not change --
       NODE_ENV: production

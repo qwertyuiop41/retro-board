@@ -16,6 +16,7 @@ import SlackLoginButton from './social/SlackLoginButton';
 import OktaLoginButton from './social/OktaLoginButton';
 import useOAuthAvailabilities from '../../global/useOAuthAvailabilities';
 import { useTranslation } from 'react-i18next';
+import OAuthLoginButton from './social/OAuth2LoginButton';
 
 const API_URL = '/api/auth';
 
@@ -60,6 +61,7 @@ function SocialAuth({ onClose, onUser }: SocialAuthProps) {
     () => handleOAuth('twitter'),
     [handleOAuth]
   );
+  const handleOAuth2 = useCallback(() => handleOAuth('custom'), [handleOAuth]);
 
   useEffect(() => {
     const s = io();
@@ -105,6 +107,12 @@ function SocialAuth({ onClose, onUser }: SocialAuthProps) {
           <TwitterLoginButton onClick={handleTwitter} text="Twitter" />
         )}
         {details.okta && <OktaLoginButton onClick={handleOkta} text="Okta" />}
+        {details.custom && (
+          <OAuthLoginButton
+            onClick={handleOAuth2}
+            text="Company's Authentication"
+          />
+        )}
       </AccountsButtons>
     </Wrapper>
   );

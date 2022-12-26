@@ -50,6 +50,11 @@ router.get('/self-hosting', async (_, res) => {
       slack: !!config.SLACK_KEY && !!config.SLACK_SECRET,
       twitter: !!config.TWITTER_KEY && !!config.TWITTER_SECRET,
       okta: !!config.OKTA_AUDIENCE && !!config.OKTA_KEY && !!config.OKTA_SECRET,
+      custom:
+        !!config.OAUTH2_AUTHORIZATION_URL &&
+        !!config.OAUTH2_CLIENT_ID &&
+        !!config.OAUTH2_CLIENT_SECRET &&
+        !!config.OAUTH2_TOKEN_URL,
     },
   };
   res.status(200).send(payload);

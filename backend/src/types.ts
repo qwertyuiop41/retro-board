@@ -37,6 +37,10 @@ export interface BackendConfig {
   OKTA_AUDIENCE: string;
   OKTA_KEY: string;
   OKTA_SECRET: string;
+  OAUTH2_AUTHORIZATION_URL: string;
+  OAUTH2_TOKEN_URL: string;
+  OAUTH2_CLIENT_ID: string;
+  OAUTH2_CLIENT_SECRET: string;
   SENDGRID_API_KEY: string;
   SENDGRID_SENDER: string;
   STRIPE_SECRET: string;
