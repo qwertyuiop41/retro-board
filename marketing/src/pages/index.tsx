@@ -2,9 +2,9 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '../common/theme/webApp';
 
-// import { ResetCSS } from 'common/assets/css/style';
+import { ResetCSS } from '../common/assets/css/style';
 // import { DrawerProvider } from 'common/contexts/DrawerContext';
-// import SEO from 'components/seo';
+import SEO from '../components/seo';
 import Banner from '../containers/WebApp/Banner';
 // import Blog from 'containers/WebApp/Blog';
 // import CallToAction from 'containers/WebApp/CallToAction';
@@ -29,9 +29,9 @@ const WebApp = () => {
   return (
     <ThemeProvider theme={theme}>
       <>
-        {/* <SEO title="WebApp | A react Gatsby landing page" />
-       
-        <ResetCSS />*/}
+        <SEO title="WebApp | A react Gatsby landing page" />
+
+        <ResetCSS />
         <GlobalStyle />
 
         <AppWrapper>

@@ -4,6 +4,9 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Retrospected`,
     siteUrl: `https://www.retrospected.com`,
+    description:
+      'Retrospected is a free and open source tool to run retrospectives online.',
+    author: 'Antoine Jaussoin',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
