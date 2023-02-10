@@ -6,13 +6,16 @@ import Container from '../../../common/components/UI/Container';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 import SecureDashboardArea, { Col, Row } from './secureDashboard.style';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 const SecureDashboard = () => {
   const Data = useStaticQuery(graphql`
     query {
       webAppJson {
         SECURE_DASHBOARD_DATA {
           sectionImage {
-            publicURL
+            childImageSharp {
+              gatsbyImageData
+            }
           }
           blockTitle {
             title
@@ -20,7 +23,9 @@ const SecureDashboard = () => {
           }
           posts {
             icon {
-              publicURL
+              childImageSharp {
+                gatsbyImageData
+              }
             }
             title
             text
@@ -34,6 +39,7 @@ const SecureDashboard = () => {
   });
   const { sectionImage, blockTitle, posts } =
     Data.webAppJson.SECURE_DASHBOARD_DATA;
+  const sectionImageData = getImage(sectionImage);
   const { title, text } = blockTitle;
   const handleClick = (tabName) => {
     setTab({
@@ -47,15 +53,15 @@ const SecureDashboard = () => {
         <Row>
           <Col className="image">
             {'tab-1' === tab.toggle ? (
-              <Image
-                src={sectionImage.publicURL}
+              <GatsbyImage
+                image={sectionImageData as any}
                 alt=""
                 className="sectionImage"
               />
             ) : null}
             {'tab-2' === tab.toggle ? (
-              <Image
-                src={sectionImage.publicURL}
+              <GatsbyImage
+                image={sectionImageData as any}
                 alt=""
                 className="sectionImage"
               />
@@ -67,23 +73,26 @@ const SecureDashboard = () => {
               <Text as="p" content={text} />
             </Box>
             <Box className="postWrap">
-              {posts.map(({ icon, title, text }, index) => (
-                <Box
-                  className={`post ${
-                    tab.toggle === `tab-${index + 1}` ? 'active' : null
-                  }`}
-                  onClick={() => handleClick(`tab-${index + 1}`)}
-                  key={`post-key-${index}`}
-                >
-                  <Box className="image">
-                    <Image src={icon.publicURL} alt="" />
+              {posts.map(({ icon, title, text }, index) => {
+                const iconImage = getImage(icon);
+                return (
+                  <Box
+                    className={`post ${
+                      tab.toggle === `tab-${index + 1}` ? 'active' : null
+                    }`}
+                    onClick={() => handleClick(`tab-${index + 1}`)}
+                    key={`post-key-${index}`}
+                  >
+                    <Box className="image">
+                      <GatsbyImage image={iconImage as any} alt="" />
+                    </Box>
+                    <Box className="postContent">
+                      <Heading as="h3" content={title} />
+                      <Text as="p" content={text} />
+                    </Box>
                   </Box>
-                  <Box className="postContent">
-                    <Heading as="h3" content={title} />
-                    <Text as="p" content={text} />
-                  </Box>
-                </Box>
-              ))}
+                );
+              })}
             </Box>
           </Col>
         </Row>

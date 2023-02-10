@@ -39,11 +39,8 @@
       "label": "Try it for free",
       "link": "#"
     },
-    "image": [
-      {
-        "src": "../../assets/image/webApp/banner-1.png"
-      }
-    ]
+    "image": "../../assets/image/webApp/banner-1.png"
+    
   },
   "FEATURE_DATA": {
     "blockTitle": {

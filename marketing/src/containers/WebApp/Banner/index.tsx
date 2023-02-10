@@ -8,6 +8,7 @@ import React from 'react';
 import { Icon } from 'react-icons-kit';
 import { androidArrowForward } from 'react-icons-kit/ionicons/androidArrowForward';
 import BannerArea, { Col } from './banner.style';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const Banner = () => {
   const Data = useStaticQuery(graphql`
@@ -21,8 +22,8 @@ const Banner = () => {
             label
           }
           image {
-            src {
-              publicURL
+            childImageSharp {
+              gatsbyImageData
             }
           }
           tagline
@@ -31,6 +32,7 @@ const Banner = () => {
     }
   `);
   const { title, text, button, image, tagline } = Data.webAppJson.BANNER_DATA;
+  const img = getImage(image);
   // const { title, text, button, image, tagline } = {
   //   title: 'Web App',
   //   text: 'A web application or web app is a client–server software application in which the client (or user interface) runs in a web browser.',
@@ -64,9 +66,7 @@ const Banner = () => {
         </Col>
       </Container>
       <Box className="bannerImage">
-        {image.map(({ src }: { src: { publicURL: string } }, index: number) => (
-          <Image src={src.publicURL} alt="" key={`banner-image-key-${index}`} />
-        ))}
+        <GatsbyImage image={img as any} alt="" key={`banner-image-key`} />
       </Box>
     </BannerArea>
   );
