@@ -28,12 +28,12 @@ RUN npm run build
 FROM nginx:latest
 
 RUN apt update
-RUN apt-get install nginx-extras -y
+# RUN apt-get install nginx-extras -y
 
 COPY --from=Node /home/node/app/public /usr/share/nginx/html
 COPY ./docker/nginx.conf.template /etc/nginx/conf.d/default.conf.template
 COPY ./docker/marketing-entrypoint.sh /
-COPY ./docker/lang.lua /usr/share/nginx/lang.lua
+# COPY ./docker/lang.lua /usr/share/nginx/lang.lua
 
 RUN ["chmod", "+x", "/marketing-entrypoint.sh"]
 ENTRYPOINT ["/marketing-entrypoint.sh"]

@@ -9,7 +9,7 @@ import config from './gatsby-config';
  */
 exports.onCreatePage = async ({
   page,
-  actions: { createPage, deletePage, createRedirect },
+  actions: { createPage, deletePage },
 }) => {
   const isEnvDevelopment = process.env.NODE_ENV === 'development';
   const originalPath = page.path;
