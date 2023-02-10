@@ -65,6 +65,14 @@ const config: RetrospectedGatsbyConfig = {
       },
     },
     // {
+    //   resolve: 'gatsby-plugin-nginx-redirect',
+    //   options: {
+    //     inputConfigFile: `${__dirname}/docker/nginx.conf.template`,
+    //     outputConfigFile: `${__dirname}/docker/nginx.conf.template.generated`,
+    //     whereToIncludeRedirects: 'server.http', // defaults to: "server"
+    //   },
+    // },
+    // {
     //   resolve: `gatsby-plugin-i18n`,
     //   options: {
     //     langKeyDefault: 'en',
