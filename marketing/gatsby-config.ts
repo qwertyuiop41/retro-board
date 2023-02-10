@@ -1,12 +1,19 @@
 import type { GatsbyConfig } from 'gatsby';
 
-const config: GatsbyConfig = {
+type RetrospectedGatsbyConfig = GatsbyConfig & {
+  siteMetadata: {
+    supportedLanguages: string[];
+  };
+};
+
+const config: RetrospectedGatsbyConfig = {
   siteMetadata: {
     title: `Retrospected`,
     siteUrl: `https://www.retrospected.com`,
     description:
       'Retrospected is a free and open source tool to run retrospectives online.',
     author: 'Antoine Jaussoin',
+    supportedLanguages: ['en', 'fr'],
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -57,6 +64,15 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/common/assets/`,
       },
     },
+    // {
+    //   resolve: `gatsby-plugin-i18n`,
+    //   options: {
+    //     langKeyDefault: 'en',
+    //     langKeyForNull: 'en',
+    //     prefixDefault: false,
+    //     useLangKeyLayout: false,
+    //   },
+    // },
   ],
 };
 

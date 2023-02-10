@@ -23,8 +23,10 @@ import GlobalStyle, {
   ContentWrapper,
 } from '../containers/WebApp/webApp.style';
 import Sticky from 'react-stickynode';
+import { usePageContext } from '../contexts/PageContext';
 
 const WebApp = () => {
+  const context = usePageContext();
   return (
     <ThemeProvider theme={theme}>
       <>
