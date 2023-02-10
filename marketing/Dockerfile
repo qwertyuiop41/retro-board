@@ -20,6 +20,9 @@ RUN npm i
 COPY --chown=node:node ./src ./src
 COPY --chown=node:node ./tsconfig.json ./tsconfig.json
 COPY --chown=node:node ./gatsby-config.ts ./gatsby-config.ts
+COPY --chown=node:node ./gatsby-browser.ts ./gatsby-browser.ts
+COPY --chown=node:node ./gatsby-node.ts ./gatsby-node.ts
+COPY --chown=node:node ./gatsby-ssr.ts ./gatsby-ssr.ts
 
 RUN npm run build
 
