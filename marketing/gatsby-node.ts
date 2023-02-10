@@ -9,43 +9,21 @@ import config from './gatsby-config';
  */
 exports.onCreatePage = async ({
   page,
-  actions: { createPage, deletePage, createRedirect },
+  actions: { createPage, deletePage },
 }) => {
-  const isEnvDevelopment = process.env.NODE_ENV === 'development';
-  const originalPath = page.path;
-
   // Delete the original page (since we are gonna create localized versions of it)
   await deletePage(page);
 
   // Create one page for each locale
   await Promise.all(
     config.siteMetadata.supportedLanguages.map(async (lang, index) => {
-      const localizedPath = `/${lang}${page.path}`;
-
-      createRedirect({
-        fromPath: originalPath,
-        toPath: localizedPath,
-        Language: lang,
-        isPermanent: false,
-        redirectInBrowser: isEnvDevelopment,
-        statusCode: 301,
-      });
+      const localizedPath = index === 0 ? page.path : `/${lang}${page.path}`;
 
       await createPage({
         ...page,
         path: localizedPath,
-        context: { ...page.context, lang, originalPath },
+        context: { ...page.context, lang, originalPath: page.path },
       });
     })
   );
-
-  // Create a fallback redirect if the language is not supported or the
-  // Accept-Language header is missing for some reason
-  createRedirect({
-    fromPath: originalPath,
-    toPath: `/${config.siteMetadata.defaultLanguage}${page.path}`,
-    isPermanent: false,
-    redirectInBrowser: isEnvDevelopment,
-    statusCode: 301,
-  });
 };

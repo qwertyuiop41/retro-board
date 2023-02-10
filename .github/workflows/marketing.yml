@@ -2,7 +2,7 @@ name: 'Marketing Build'
 
 on:
   push:
-    branches: [v5000/marketing]
+    branches: [v5000/marketing-revert]
 
 jobs:
   marketing:
