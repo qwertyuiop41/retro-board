@@ -19,6 +19,26 @@ server {
   
   add_header Referrer-Policy "no-referrer-when-downgrade";
   
+  # set $lsup "en-US,en-UK,en-AU,fr-FR,fr-CA,fr,en";
+  # set $ldef "en:en-US,fr:fr-FR";
+  # set $lfallback "en-US";
+  # set $lparam "lang";
+
+  # set_by_lua_file $lang /usr/share/nginx/lang.lua $lsup $ldef $lfallback $lparam;
+
+  # location = / {
+  #   # alias  /usr/share/nginx/html/;
+  #   # try_files $uri $uri/ /index.html;
+  #   # add_header Cache-Control "no-store, no-cache, must-revalidate";
+
+  #   if ($lang ~ 'en' ) {
+  #     rewrite (.*) $scheme://$http_host$uri/en$1;
+  #   }
+
+  #   if ($lang ~ 'fr' ) {
+  #     rewrite (.*) $scheme://$http_host$uri/fr$1;
+  #   }
+  # }
 
   location / {
     alias  /usr/share/nginx/html/;
