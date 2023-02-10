@@ -1,5 +1,4 @@
 FROM --platform=$BUILDPLATFORM node:lts-alpine as Node
-#FROM  node:16-alpine as Node
 
 ENV NODE_ENV=production
 

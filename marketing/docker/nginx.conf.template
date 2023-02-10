@@ -27,9 +27,9 @@ server {
   set_by_lua_file $lang /usr/share/nginx/lang.lua $lsup $ldef $lfallback $lparam;
 
   location = / {
-    alias  /usr/share/nginx/html/;
-    try_files $uri $uri/ /index.html;
-    add_header Cache-Control "no-store, no-cache, must-revalidate";
+    # alias  /usr/share/nginx/html/;
+    # try_files $uri $uri/ /index.html;
+    # add_header Cache-Control "no-store, no-cache, must-revalidate";
 
     if ($lang ~ 'en' ) {
       rewrite (.*) $scheme://$http_host$uri/en$1;
