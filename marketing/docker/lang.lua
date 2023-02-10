@@ -20,10 +20,6 @@ if ( ngx.arg[3] ~= nil ) then
   fallback = ngx.arg[3]
 end
 
-ngx.log(ngx.STDERR, 'Fallback' .. fallback)
-
-
-
 local pname = "lang"
 if ( ngx.arg[4] ~= nil ) then
   pname = ngx.arg[4]
