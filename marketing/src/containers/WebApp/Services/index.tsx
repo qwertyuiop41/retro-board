@@ -6,37 +6,41 @@ import Container from '../../../common/components/UI/Container';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import ServicesArea, { Col, Row } from './services.style';
+import { useTranslation } from 'react-i18next';
 const Services = () => {
-  const Data = useStaticQuery(graphql`
-    query {
-      webAppJson {
-        SERVICE_DATA {
-          icon {
-            publicURL
-          }
-          title
-          text
-        }
-      }
-    }
-  `);
+  const { t } = useTranslation();
+  // const Data = useStaticQuery(graphql`
+  //   query {
+  //     webAppJson {
+  //       SERVICE_DATA {
+  //         icon {
+  //           publicURL
+  //         }
+  //         title
+  //         text
+  //       }
+  //     }
+  //   }
+  // `);
   return (
     <ServicesArea id="service_section">
       <Container>
         <Row>
-          {Data.webAppJson.SERVICE_DATA.map(({ icon, title, text }, index) => (
-            <Col key={`service-post-key-${index}`}>
-              <Box className="servicePost">
-                <div className="service-icon">
-                  <Image src={icon.publicURL} alt="" />
-                </div>
-                <Box className="content">
-                  <Heading as="h3" content={title} />
-                  <Text as="p" content={text} />
+          {t('Services', { returnObjects: true }).map(
+            ({ icon, title, text }, index) => (
+              <Col key={`service-post-key-${index}`}>
+                <Box className="servicePost">
+                  <div className="service-icon">
+                    <Image src={icon.publicURL} alt="" />
+                  </div>
+                  <Box className="content">
+                    <Heading as="h3" content={title} />
+                    <Text as="p" content={text} />
+                  </Box>
                 </Box>
-              </Box>
-            </Col>
-          ))}
+              </Col>
+            )
+          )}
         </Row>
       </Container>
     </ServicesArea>

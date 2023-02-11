@@ -9,23 +9,14 @@ import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
 import Container from '../../../common/components/UI/Container';
 import Logo from '../../../common/components/UIElements/Logo';
 import { DrawerContext } from '../../../common/contexts/DrawerContext';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
-  const Data = useStaticQuery(graphql`
-    query {
-      webAppJson {
-        MENU_ITEMS {
-          label
-          path
-          offset
-        }
-      }
-    }
-  `);
-
+  const { t } = useTranslation();
+  const menuItems = t('MenuItems', { returnObjects: true });
   const { state, dispatch } = useContext(DrawerContext);
 
   // Toggle drawer
@@ -56,7 +47,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
           <Box {...menuWrapper} className="mainMenuWrapper">
             <ScrollSpyMenu
               className="main_menu"
-              menuItems={Data.webAppJson.MENU_ITEMS}
+              menuItems={menuItems}
               offset={-70}
             />
             <Link className="navbar_button" to="#">
@@ -74,7 +65,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
             >
               <ScrollSpyMenu
                 className="mobile_menu"
-                menuItems={Data.webAppJson.MENU_ITEMS}
+                menuItems={menuItems}
                 drawerClose={true}
                 offset={-100}
               />
