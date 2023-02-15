@@ -72,13 +72,47 @@ const config: RetrospectedGatsbyConfig = {
     //     whereToIncludeRedirects: 'server.http', // defaults to: "server"
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-i18n`,
+      options: {
+        langKeyDefault: 'en',
+        langKeyForNull: 'en',
+        prefixDefault: false,
+        useLangKeyLayout: false,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/translations`,
+        name: `translations`,
+      },
+    },
     // {
-    //   resolve: `gatsby-plugin-i18n`,
+    //   resolve: `gatsby-plugin-react-i18next`,
     //   options: {
-    //     langKeyDefault: 'en',
-    //     langKeyForNull: 'en',
-    //     prefixDefault: false,
-    //     useLangKeyLayout: false,
+    //     localeJsonSourceName: `locale`,
+    //     languages: [`en`, `fr`],
+    //     defaultLanguage: `en`,
+    //     siteUrl: `http://localhost:8000/`,
+    //     i18nextOptions: {
+    //       interpolation: {
+    //         escapeValue: false,
+    //       },
+    //       keySeparator: false,
+    //       nsSeparator: false,
+    //     },
+    //     pages: [
+    //       {
+    //         matchPath: '/:lang?/blog/:uid',
+    //         getLanguageFromPath: true,
+    //         excludeLanguages: ['es'],
+    //       },
+    //       {
+    //         matchPath: '/preview',
+    //         languages: ['en'],
+    //       },
+    //     ],
     //   },
     // },
   ],

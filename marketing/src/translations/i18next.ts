@@ -1,6 +1,6 @@
 import i18n from 'i18next';
-import fr from './fr-FR.json';
-import en from './en-GB.json';
+import fr from './fr/index.json';
+import en from './en/index.json';
 import { initReactI18next } from 'react-i18next';
 
 i18n.use(initReactI18next).init({

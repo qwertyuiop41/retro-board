@@ -24,9 +24,24 @@ import GlobalStyle, {
 } from '../containers/WebApp/webApp.style';
 import Sticky from 'react-stickynode';
 import { usePageContext } from '../contexts/PageContext';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const WebApp = () => {
   const context = usePageContext();
+  console.log('Context: ', context);
+  // const Data = useStaticQuery(graphql`
+  //   query ($language: String!) {
+  //     allTranslationsJson(filter: { lang: { eq: $language } }) {
+  //       nodes {
+  //         retrospected {
+  //           Banner {
+  //             title
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `);
   return (
     <ThemeProvider theme={theme}>
       <>

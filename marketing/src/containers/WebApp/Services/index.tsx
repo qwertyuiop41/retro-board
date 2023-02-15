@@ -7,21 +7,24 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import ServicesArea, { Col, Row } from './services.style';
 import { useTranslation } from 'react-i18next';
+import { GatsbyImage } from 'gatsby-plugin-image';
+
 const Services = () => {
   const { t } = useTranslation();
   // const Data = useStaticQuery(graphql`
-  //   query {
-  //     webAppJson {
-  //       SERVICE_DATA {
-  //         icon {
-  //           publicURL
+  //   query ($language: String!) {
+  //     allTranslationsJson(filter: { lang: { eq: $language } }) {
+  //       nodes {
+  //         retrospected {
+  //           Banner {
+  //             title
+  //           }
   //         }
-  //         title
-  //         text
   //       }
   //     }
   //   }
   // `);
+  // console.log('Data: ', Data);
   return (
     <ServicesArea id="service_section">
       <Container>

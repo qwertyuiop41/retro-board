@@ -25,7 +25,7 @@ exports.onCreatePage = async ({
       await createPage({
         ...page,
         path: localizedPath,
-        context: { ...page.context, lang, originalPath },
+        context: { ...page.context, lang, language: lang, originalPath },
       });
     })
   );
