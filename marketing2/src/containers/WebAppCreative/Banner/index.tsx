@@ -32,7 +32,12 @@ const Banner = () => {
             </Subscribe>
           </BannerContent>
           <Figure className="animate__animated animate__fadeInUp animate__fast">
-            <NextImage src={dashboard} alt="dashboard" />
+            <NextImage
+              src={dashboard}
+              alt="dashboard"
+              priority
+              placeholder="blur"
+            />
           </Figure>
         </BannerContentWrapper>
       </Container>
