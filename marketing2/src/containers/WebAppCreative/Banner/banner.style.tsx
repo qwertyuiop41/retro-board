@@ -72,6 +72,7 @@ export const BannerContent = styled.div`
 
 export const Subscribe = styled.div`
   display: flex;
+  justify-content: center;
   max-width: 540px;
   margin: 28px auto 0;
   @media screen and (max-width: 1366px) {

@@ -1,7 +1,6 @@
 import Container from '../../../common/components/UI/Container';
 import Heading from '../../../common/components/Heading';
 import Text from '../../../common/components/Text';
-import Input from '../../../common/components/Input';
 import Button from '../../../common/components/Button';
 import NextImage from '../../../common/components/NextImage';
 import Section, {
@@ -11,12 +10,9 @@ import Section, {
   Figure,
 } from './banner.style';
 import dashboard from '../../../common/assets/image/webAppCreative/dashboard.png';
-import envelope from '../../../common/assets/image/webAppCreative/icons/envelope.png';
-import { useRouter } from 'next/router';
 import { useTranslation } from 'next-i18next';
 
 const Banner = () => {
-  const { locale } = useRouter();
   const { t } = useTranslation('common');
   return (
     <Section id="home">
@@ -25,33 +21,14 @@ const Banner = () => {
           <BannerContent>
             <Heading
               className="animate__animated animate__fadeInUp"
-              content={`The leading Customer dashboard for your daily workspace ${locale}`}
+              content={t('Banner.heading')}
             />
             <Text
               className="animate__animated animate__fadeInUp"
-              content="Join 30,000+ businesses that use Segment's software and APIs to
-              collect, clean, and control their customer data."
-            />
-            <Text
-              className="animate__animated animate__fadeInUp"
-              content={t('foo')}
+              content={t('Banner.text')}
             />
             <Subscribe className="animate__animated animate__fadeInUp">
-              <Input
-                inputType="email"
-                placeholder="Your work email"
-                iconPosition="left"
-                aria-label="email"
-                icon={
-                  <NextImage
-                    src={envelope?.src}
-                    alt="envelope"
-                    width={25}
-                    height={25}
-                  />
-                }
-              />
-              <Button title="Get a demo today" type="submit" />
+              <Button title={t('Banner.subscribeToday')!} type="submit" />
             </Subscribe>
           </BannerContent>
           <Figure className="animate__animated animate__fadeInUp animate__fast">
