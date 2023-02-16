@@ -2,7 +2,7 @@ name: 'Marketing Build'
 
 on:
   push:
-    branches: [v5000/marketing]
+    branches: [v5000/marketing-next]
 
 jobs:
   marketing:
@@ -32,8 +32,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          file: marketing2/Dockerfile
-          context: marketing2
+          file: marketing/Dockerfile
+          context: marketing
           tags: retrospected/marketing:alpha
           platforms: linux/amd64
           push: true

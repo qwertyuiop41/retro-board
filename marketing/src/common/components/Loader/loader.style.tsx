@@ -4,7 +4,7 @@ import { colorStyle } from '../customVariant';
 import { AnimSpinner } from '../Animation';
 import { base } from '../base';
 
-const LoaderStyle = styled.span`
+const LoaderStyle = styled.span<{ loaderColor?: string }>`
   /* loader default style */
   display: inline-flex;
   width: 14px;
@@ -23,12 +23,5 @@ const LoaderStyle = styled.span`
   ${colorStyle}
   ${base}
 `;
-
-// prop types can also be added from the style functions
-LoaderStyle.propTypes = {
-  ...variant.propTypes,
-};
-
-LoaderStyle.displayName = 'LoaderStyle';
 
 export default LoaderStyle;

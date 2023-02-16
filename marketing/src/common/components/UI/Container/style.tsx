@@ -1,11 +1,13 @@
 import styled, { css } from 'styled-components';
 
-const ContainerWrapper = styled.div<{
+type ContainerProps = {
   fullWidth?: boolean;
   noGutter?: boolean;
-  width?: string;
   mobileGutter?: boolean;
-}>`
+  width?: string;
+};
+
+const ContainerWrapper = styled.div<ContainerProps>`
   margin-left: auto;
   margin-right: auto;
   ${(props) =>
@@ -34,6 +36,10 @@ const ContainerWrapper = styled.div<{
   }
   @media (min-width: 1220px) {
     max-width: ${(props) => props.width || '1170px'};
+    width: 100%;
+  }
+  @media (min-width: 1400px) {
+    max-width: ${(props) => props.width || '1360px'};
     width: 100%;
   }
   @media (max-width: 768px) {

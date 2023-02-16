@@ -1,5 +1,5 @@
 {
-	"lang": "en",
+	"foo": "Bar",
 	"retrospected":  {
 		"Banner": {
 			"title": "Real-time Retrospectives. Done right. In seconds.",

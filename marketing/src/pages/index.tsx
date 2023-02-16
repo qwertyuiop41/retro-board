@@ -1,80 +1,74 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../common/theme/webApp';
-import { ResetCSS } from '../common/assets/css/style';
-import { DrawerProvider } from '../common/contexts/DrawerContext';
-import SEO from '../components/seo';
-import Banner from '../containers/WebApp/Banner';
-import Blog from '../containers/WebApp/Blog';
-import CallToAction from '../containers/WebApp/CallToAction';
-import Clients from '../containers/WebApp/Clients';
-import Counter from '../containers/WebApp/Counter';
-import CustomerSupport from '../containers/WebApp/CustomerSupport';
-import Features from '../containers/WebApp/Features';
-import Footer from '../containers/WebApp/Footer';
-import Navbar from '../containers/WebApp/Navbar';
-import Pricing from '../containers/WebApp/Pricing';
-import SecureDashboard from '../containers/WebApp/SecureDashboard';
-import Services from '../containers/WebApp/Services';
-import Testimonials from '../containers/WebApp/Testimonials';
-// import Video from '../containers/WebApp/Video';
-import GlobalStyle, {
-  AppWrapper,
-  ContentWrapper,
-} from '../containers/WebApp/webApp.style';
 import Sticky from 'react-stickynode';
-import { usePageContext } from '../contexts/PageContext';
-import { graphql, useStaticQuery } from 'gatsby';
+import { DrawerProvider } from '../common/contexts/DrawerContext';
+import { theme } from '../common/theme/webAppCreative';
+import ResetCSS from '../common/assets/css/style';
+import Banner from '../containers/WebAppCreative/Banner';
+// import Navbar from 'containers/WebAppCreative/Navbar';
+// import Clients from 'containers/WebAppCreative/Clients';
+// import HowItWorks from 'containers/WebAppCreative/HowItWorks';
+// import AnalyticsTool from 'containers/WebAppCreative/AnalyticsTool';
+// import Dashboard from 'containers/WebAppCreative/Dashboard';
+// import Testimonials from 'containers/WebAppCreative/Testimonials';
+// import Integrations from 'containers/WebAppCreative/Integrations';
+// import Pricing from 'containers/WebAppCreative/Pricing';
+// import NewsFeed from 'containers/WebAppCreative/NewsFeed';
+// import Faq from 'containers/WebAppCreative/Faq';
+// import CallToAction from 'containers/WebAppCreative/CallToAction';
+// import Footer from 'containers/WebAppCreative/Footer';
+import {
+  GlobalStyle,
+  ContentWrapper,
+  CombinedSection,
+  CornerPattern,
+} from '../containers/WebAppCreative/webAppCreative.style';
+import 'animate.css';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const WebApp = () => {
-  const context = usePageContext();
-  console.log('Context: ', context);
-  // const Data = useStaticQuery(graphql`
-  //   query ($language: String!) {
-  //     allTranslationsJson(filter: { lang: { eq: $language } }) {
-  //       nodes {
-  //         retrospected {
-  //           Banner {
-  //             title
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }
-  // `);
+const webAppCreative = () => {
   return (
     <ThemeProvider theme={theme}>
-      <>
-        <SEO title="Retrospected | Easy Online Retrospectives" />
+      <Fragment>
+        <Head>
+          <title>Web App Creative | A react next landing page</title>
+          <meta name="Description" content="React next landing page" />
+          <meta name="theme-color" content="#ec5555" />
+        </Head>
 
         <ResetCSS />
         <GlobalStyle />
 
-        <AppWrapper>
+        <ContentWrapper>
           <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
-            <DrawerProvider>
-              <Navbar />
-            </DrawerProvider>
+            <DrawerProvider>{/* <Navbar /> */}</DrawerProvider>
           </Sticky>
-          <ContentWrapper>
-            <Banner />
-            <Features />
-            {/* <Video /> */}
-            <Services />
-            <Clients />
-            <SecureDashboard />
-            <Counter />
-            <Testimonials />
+          <Banner />
+          {/* <Clients />
+          <HowItWorks />
+          <AnalyticsTool />
+          <Dashboard />
+          <Testimonials />
+          <CombinedSection>
+            <Integrations />
             <Pricing />
-            <CustomerSupport />
-            <Blog />
-            <CallToAction />
-            <Footer />
-          </ContentWrapper>
-        </AppWrapper>
-      </>
+            <CornerPattern />
+          </CombinedSection>
+          <NewsFeed />
+          <Faq />
+          <CallToAction />
+          <Footer /> */}
+        </ContentWrapper>
+      </Fragment>
     </ThemeProvider>
   );
 };
 
-export default WebApp;
+export const getStaticProps = async ({ locale }: { locale?: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', ['common'])),
+  },
+});
+
+export default webAppCreative;
