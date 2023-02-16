@@ -1,6 +1,13 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
-const ContainerWrapper = styled.div`
+type ContainerProps = {
+  fullWidth?: boolean;
+  noGutter?: boolean;
+  mobileGutter?: boolean;
+  width?: string;
+};
+
+const ContainerWrapper = styled.div<ContainerProps>`
   margin-left: auto;
   margin-right: auto;
   ${(props) =>
@@ -43,6 +50,6 @@ const ContainerWrapper = styled.div`
         padding-right: 30px;
       `};
   }
-`
+`;
 
-export default ContainerWrapper
+export default ContainerWrapper;

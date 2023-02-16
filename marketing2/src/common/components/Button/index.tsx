@@ -3,6 +3,20 @@ import PropTypes from 'prop-types';
 import ButtonStyle from './button.style';
 import Loader from '../Loader';
 
+type ButtonProps = {
+  type: 'button' | 'submit' | 'reset';
+  title?: string;
+  icon?: React.ReactNode;
+  disabled?: boolean;
+  iconPosition?: 'left' | 'right';
+  onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  loader?: React.ReactNode;
+  loaderColor?: string;
+  isMaterial?: boolean;
+  isLoading?: boolean;
+  className?: string;
+};
+
 const Button = ({
   type,
   title,
@@ -16,7 +30,7 @@ const Button = ({
   isLoading,
   className,
   ...props
-}) => {
+}: ButtonProps) => {
   // Add all classs to an array
   const addAllClasses = ['reusecore__button'];
 
@@ -52,7 +66,7 @@ const Button = ({
     <ButtonStyle
       type={type}
       className={addAllClasses.join(' ')}
-      icon={icon}
+      // icon={icon}
       disabled={disabled}
       icon-position={position}
       onClick={onClick}

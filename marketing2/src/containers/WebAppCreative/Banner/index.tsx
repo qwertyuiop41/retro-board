@@ -13,7 +13,7 @@ import Section, {
 import dashboard from '../../../common/assets/image/webAppCreative/dashboard.png';
 import envelope from '../../../common/assets/image/webAppCreative/icons/envelope.png';
 import { useRouter } from 'next/router';
-import { useTranslation }  from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 
 const Banner = () => {
   const { locale } = useRouter();
@@ -32,7 +32,7 @@ const Banner = () => {
               content="Join 30,000+ businesses that use Segment's software and APIs to
               collect, clean, and control their customer data."
             />
-             <Text
+            <Text
               className="animate__animated animate__fadeInUp"
               content={t('foo')}
             />
@@ -42,7 +42,14 @@ const Banner = () => {
                 placeholder="Your work email"
                 iconPosition="left"
                 aria-label="email"
-                icon={<img src={envelope?.src} alt="envelope" />}
+                icon={
+                  <NextImage
+                    src={envelope?.src}
+                    alt="envelope"
+                    width={25}
+                    height={25}
+                  />
+                }
               />
               <Button title="Get a demo today" type="submit" />
             </Subscribe>
@@ -55,6 +62,5 @@ const Banner = () => {
     </Section>
   );
 };
-
 
 export default Banner;

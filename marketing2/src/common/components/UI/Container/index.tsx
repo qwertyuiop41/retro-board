@@ -1,5 +1,14 @@
-import React from 'react'
-import ContainerWrapper from './style'
+import React from 'react';
+import ContainerWrapper from './style';
+
+type ContainerProps = {
+  children: React.ReactNode;
+  className?: string;
+  fullWidth?: boolean;
+  noGutter?: boolean;
+  mobileGutter?: boolean;
+  width?: string;
+};
 
 const Container = ({
   children,
@@ -8,12 +17,12 @@ const Container = ({
   noGutter,
   mobileGutter,
   width,
-}) => {
+}: ContainerProps) => {
   // Add all classs to an array
-  const addAllClasses = ['container']
+  const addAllClasses = ['container'];
   // className prop checking
   if (className) {
-    addAllClasses.push(className)
+    addAllClasses.push(className);
   }
 
   return (
@@ -26,7 +35,7 @@ const Container = ({
     >
       {children}
     </ContainerWrapper>
-  )
-}
+  );
+};
 
-export default Container
+export default Container;

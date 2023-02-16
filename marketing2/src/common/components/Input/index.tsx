@@ -2,6 +2,26 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import InputField, { EyeButton } from './input.style';
+
+type InputProps = {
+  label?: string;
+  value?: string | number;
+  onBlur?: (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  onFocus?: (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => void;
+  onChange?: (value: string | number) => void;
+  inputType?: 'text' | 'email' | 'password' | 'number' | 'textarea';
+  isMaterial?: boolean;
+  icon?: React.ReactNode;
+  iconPosition?: 'left' | 'right';
+  passwordShowHide?: boolean;
+  className?: string;
+  placeholder?: string;
+};
+
 const Input = ({
   label,
   value,
@@ -15,7 +35,7 @@ const Input = ({
   passwordShowHide,
   className,
   ...props
-}) => {
+}: InputProps) => {
   // use toggle hooks
   const [state, setState] = useState({
     toggle: false,
@@ -32,30 +52,42 @@ const Input = ({
   };
 
   // add focus class
-  const handleOnFocus = (event) => {
+  const handleOnFocus = (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setState({
       ...state,
       focus: true,
     });
-    onFocus(event);
+    if (onFocus) {
+      onFocus(event);
+    }
   };
 
   // remove focus class
-  const handleOnBlur = (event) => {
+  const handleOnBlur = (
+    event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setState({
       ...state,
       focus: false,
     });
-    onBlur(event);
+    if (onBlur) {
+      onBlur(event);
+    }
   };
 
   // handle input value
-  const handleOnChange = (event) => {
+  const handleOnChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setState({
       ...state,
       value: event.target.value,
     });
-    onChange(event.target.value);
+    if (onChange) {
+      onChange(event.target.value);
+    }
   };
 
   // get input focus class
