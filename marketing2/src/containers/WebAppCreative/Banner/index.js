@@ -44,7 +44,7 @@ const Banner = () => {
                 aria-label="email"
                 icon={<img src={envelope?.src} alt="envelope" />}
               />
-              <Button title="Get a demo" type="submit" />
+              <Button title="Get a demo today" type="submit" />
             </Subscribe>
           </BannerContent>
           <Figure className="animate__animated animate__fadeInUp animate__fast">
