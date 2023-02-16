@@ -32,8 +32,8 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           builder: ${{ steps.buildx.outputs.name }}
-          file: marketing/Dockerfile
-          context: marketing
+          file: marketing2/Dockerfile
+          context: marketing2
           tags: retrospected/marketing:alpha
           platforms: linux/amd64
           push: true
