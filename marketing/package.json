@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.6",
+    "@redq/reuse-modal": "^2.0.0",
     "@styled-system/theme-get": "^5.1.2",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
@@ -33,6 +34,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "18.2.0",
     "react-i18next": "^12.1.5",
+    "react-scroll-motion": "^0.3.2",
     "react-scrollspy": "^3.4.3",
     "react-slick": "^0.29.0",
     "react-stickynode": "^4.1.0",

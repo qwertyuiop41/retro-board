@@ -25,6 +25,7 @@ const Drawer = ({
   closeButtonStyle,
   drawerHandler,
   toggleHandler,
+  placement,
   open,
   width = '300px',
   handler = false,
@@ -40,12 +41,16 @@ const Drawer = ({
     addAllClasses.push(className);
   }
 
+  console.log('Drawer open', motionProps);
+
   return (
     <Fragment>
       <RcDrawer
         open={open}
         onClose={toggleHandler}
         className={addAllClasses.join(' ')}
+        width={width}
+        placement={placement}
         {...props} // Motion
         {...motionProps}
       >
@@ -60,6 +65,7 @@ const Drawer = ({
         </div>
         {children}
       </RcDrawer>
+
       <div
         className="reusecore-drawer__handler"
         style={{ display: 'inline-block' }}
