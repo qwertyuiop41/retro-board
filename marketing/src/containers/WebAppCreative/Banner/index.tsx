@@ -10,6 +10,7 @@ import Section, {
   Figure,
 } from './banner.style';
 import dashboard from '../../../common/assets/image/webAppCreative/dashboard.png';
+import screenshot from './mockup-1-02.webp';
 import { useTranslation } from 'next-i18next';
 
 const Banner = () => {
@@ -33,8 +34,10 @@ const Banner = () => {
           </BannerContent>
           <Figure className="animate__animated animate__fadeInUp animate__fast">
             <NextImage
-              src={dashboard}
+              src={screenshot}
               alt="dashboard"
+              width={1280}
+              height={720}
               priority
               placeholder="blur"
             />

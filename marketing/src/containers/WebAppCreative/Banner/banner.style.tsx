@@ -146,9 +146,12 @@ export const Subscribe = styled.div`
 
 export const Figure = styled.figure`
   margin: 30px 0 0;
+  display: flex;
+
   img {
+    width: 100%;
+    object-fit: contain;
     @media (min-width: 1280px) {
-      max-width: 95%;
       margin-left: auto;
       margin-right: auto;
     }

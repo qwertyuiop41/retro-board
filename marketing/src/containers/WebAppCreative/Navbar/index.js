@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
-import NavbarWrapper from 'common/components/Navbar';
-import Drawer from 'common/components/Drawer';
-import Button from 'common/components/Button';
-import Logo from 'common/components/UIElements/Logo';
-import Box from 'common/components/Box';
-import HamburgMenu from 'common/components/HamburgMenu';
-import Container from 'common/components/UI/Container';
-import { DrawerContext } from 'common/contexts/DrawerContext';
+import NavbarWrapper from '../../../common/components/Navbar';
+import Drawer from '../../../common/components/Drawer';
+import Button from '../../../common/components/Button';
+import Logo from '../../../common/components/UIElements/Logo';
+import Box from '../../../common/components/Box';
+import HamburgMenu from '../../../common/components/HamburgMenu';
+import Container from '../../../common/components/UI/Container';
+import { DrawerContext } from '../../../common/contexts/DrawerContext';
 
-import { menu_items } from 'common/data/WebAppCreative';
-import ScrollSpyMenu from 'common/components/ScrollSpyMenu';
+import { menu_items } from '../../../common/data/WebAppCreative';
+import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
 
-import logoImage from 'common/assets/image/webAppCreative/logo.png';
+import logoImage from '../../../common/assets/image/webAppCreative/logo.png';
 
 const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
   const { state, dispatch } = useContext(DrawerContext);
@@ -29,25 +29,25 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
     <NavbarWrapper {...navbarStyle}>
       <Container width="1400px">
         <Box {...row}>
-          <Logo
+          {/* <Logo
             href="#"
             logoSrc={logoImage}
             title="SaaS Creative"
             logoStyle={logoStyle}
             className="main-logo"
-          />
+          /> */}
           <Box {...menuWrapper} className="mainMenuWrapper">
             <ScrollSpyMenu
               className="main_menu"
               menuItems={menu_items}
               offset={-70}
             />
-            <Link href="#">
+            <Link href="#" legacyBehavior>
               <a className="navbar_button navbar_button_one">
                 <Button {...button} title="Login Now" />
               </a>
             </Link>
-            <Link href="#">
+            <Link href="#" legacyBehavior>
               <a className="navbar_button navbar_button_two">
                 <Button {...button} title="Join Free" />
               </a>

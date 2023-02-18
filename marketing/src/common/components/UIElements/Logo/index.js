@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Text from 'common/components/Text';
-import Link from 'common/components/Link';
-import Image from 'common/components/Image';
+import Text from '../../../../common/components/Text';
+import Link from '../../../../common/components/Link';
+import Image from '../../../../common/components/Image';
 
 const Logo = ({ logoWrapperStyle, logoStyle, titleStyle, withAnchor, anchorProps, logoSrc, title, ...props }) => (
-  <Link {...props} {...logoWrapperStyle}>
+  <Link {...props} {...logoWrapperStyle} legacyBehavior>
     {withAnchor ? (
       <a {...anchorProps}>{logoSrc ? <Image src={logoSrc.src} alt={title} {...logoStyle} /> : <Text content={title} {...titleStyle} />}</a>
     ) : (
