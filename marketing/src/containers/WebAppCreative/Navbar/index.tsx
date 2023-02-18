@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import Link from 'next/link';
-import PropTypes from 'prop-types';
 import NavbarWrapper from '../../../common/components/Navbar';
 import Drawer from '../../../common/components/Drawer';
 import Button from '../../../common/components/Button';
@@ -9,13 +8,71 @@ import Box from '../../../common/components/Box';
 import HamburgMenu from '../../../common/components/HamburgMenu';
 import Container from '../../../common/components/UI/Container';
 import { DrawerContext } from '../../../common/contexts/DrawerContext';
-
-import { menu_items } from '../../../common/data/WebAppCreative';
 import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
-
 import logoImage from '../../../common/assets/image/webAppCreative/logo.png';
+import { MenuItem } from '@/types';
 
-const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
+export const menuItems: MenuItem[] = [
+  {
+    label: 'Nav.home',
+    path: '#home',
+    offset: '70',
+  },
+  {
+    label: 'Nav.howTo',
+    path: '#how-to',
+    offset: '70',
+  },
+  {
+    label: 'Nav.features',
+    path: '#features',
+    offset: '70',
+  },
+  {
+    label: 'Nav.testimonial',
+    path: '#testimonial',
+    offset: '70',
+  },
+  {
+    label: 'Nav.pricing',
+    path: '#pricing',
+    offset: '70',
+  },
+  {
+    label: 'Nav.faq',
+    path: '#faq',
+    offset: '70',
+  },
+];
+
+type NavbarProps = {
+  navbarStyle?: any;
+  logoStyle?: any;
+  button?: any;
+  row?: any;
+  menuWrapper?: any;
+};
+
+const Navbar = ({
+  navbarStyle = {
+    className: 'web_app_creative_navbar',
+    minHeight: '70px',
+    display: 'block',
+  },
+  row = {
+    flexBox: true,
+    alignItems: 'center',
+    width: '100%',
+  },
+  logoStyle = {
+    maxWidth: ['126px', '126px'],
+  },
+  button = {},
+  menuWrapper = {
+    flexBox: true,
+    alignItems: 'center',
+  },
+}: NavbarProps) => {
   const { state, dispatch } = useContext(DrawerContext);
 
   // Toggle drawer
@@ -39,7 +96,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
           <Box {...menuWrapper} className="mainMenuWrapper">
             <ScrollSpyMenu
               className="main_menu"
-              menuItems={menu_items}
+              menuItems={menuItems}
               offset={-70}
             />
             <Link href="#" legacyBehavior>
@@ -61,7 +118,7 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
             >
               <ScrollSpyMenu
                 className="mobile_menu"
-                menuItems={menu_items}
+                menuItems={menuItems}
                 drawerClose={true}
                 offset={-100}
               />
@@ -71,35 +128,6 @@ const Navbar = ({ navbarStyle, logoStyle, button, row, menuWrapper }) => {
       </Container>
     </NavbarWrapper>
   );
-};
-
-Navbar.propTypes = {
-  navbarStyle: PropTypes.object,
-  logoStyle: PropTypes.object,
-  button: PropTypes.object,
-  row: PropTypes.object,
-  menuWrapper: PropTypes.object,
-};
-
-Navbar.defaultProps = {
-  navbarStyle: {
-    className: 'web_app_creative_navbar',
-    minHeight: '70px',
-    display: 'block',
-  },
-  row: {
-    flexBox: true,
-    alignItems: 'center',
-    width: '100%',
-  },
-  logoStyle: {
-    maxWidth: ['126px', '126px'],
-  },
-  button: {},
-  menuWrapper: {
-    flexBox: true,
-    alignItems: 'center',
-  },
 };
 
 export default Navbar;

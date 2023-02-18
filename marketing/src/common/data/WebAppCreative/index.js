@@ -35,39 +35,6 @@ import facebook from '../../../common/assets/image/webAppCreative/icons/facebook
 import twitter from '../../../common/assets/image/webAppCreative/icons/twitter.png';
 import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble.png';
 
-export const menu_items = [
-  {
-    label: 'Home',
-    path: '#home',
-    offset: '70',
-  },
-  {
-    label: 'How To',
-    path: '#how-to',
-    offset: '70',
-  },
-  {
-    label: 'Features',
-    path: '#features',
-    offset: '70',
-  },
-  {
-    label: 'Testimonial',
-    path: '#testimonial',
-    offset: '70',
-  },
-  {
-    label: 'Pricing',
-    path: '#pricing',
-    offset: '70',
-  },
-  {
-    label: 'Faq',
-    path: '#faq',
-    offset: '70',
-  },
-];
-
 export const clients = [envato, evernote, forbes, geekwire, slack, usaToday];
 
 export const howTos = [

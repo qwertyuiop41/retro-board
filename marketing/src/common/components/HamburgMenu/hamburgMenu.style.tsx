@@ -9,7 +9,7 @@ import {
   borderRadius,
 } from 'styled-system';
 
-const HamburgMenuWrapper = styled.button`
+const HamburgMenuWrapper = styled.button<{ barColor: string }>`
   border: 0;
   background: transparent;
   width: 44px;
@@ -68,7 +68,5 @@ const HamburgMenuWrapper = styled.button`
     }
   }
 `;
-
-HamburgMenuWrapper.displayName = 'HamburgMenuWrapper';
 
 export default HamburgMenuWrapper;

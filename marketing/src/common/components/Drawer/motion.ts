@@ -4,7 +4,7 @@ export const maskMotion = {
   onAppearEnd: console.warn,
 };
 
-export const motion = (placement) => ({
+export const motion = (placement: string) => ({
   motionAppear: true,
   motionName: `panel-motion-${placement}`,
 });

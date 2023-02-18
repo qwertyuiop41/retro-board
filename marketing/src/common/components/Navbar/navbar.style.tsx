@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 import {
   display,
   alignItems,
@@ -11,7 +11,7 @@ import {
   borderRadius,
   width,
   height,
-} from 'styled-system'
+} from 'styled-system';
 
 const NavbarStyle = styled.nav`
   /* Navbar default style goes here */
@@ -32,8 +32,8 @@ const NavbarStyle = styled.nav`
   ${space}
   ${boxShadow}
   ${borderRadius}
-`
+`;
 
-NavbarStyle.displayName = 'NavbarStyle'
+NavbarStyle.displayName = 'NavbarStyle';
 
-export default NavbarStyle
+export default NavbarStyle;

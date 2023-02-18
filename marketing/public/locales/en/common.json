@@ -4,6 +4,14 @@
 		"text": "Because Post-It notes aren't going to cut it.",
 		"tagline": "*No Credit card required",
 		"subscribeToday": "Try it for free"
+	},
+	"Nav": {
+		"home": "Home",
+		"howTo": "How To",
+		"features": "Features",
+		"testimonial": "Testimonials",
+		"pricing": "Pricing",
+		"faq": "FAQ"
 	}
 }
 	
