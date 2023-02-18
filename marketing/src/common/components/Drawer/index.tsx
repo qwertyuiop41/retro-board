@@ -41,8 +41,6 @@ const Drawer = ({
     addAllClasses.push(className);
   }
 
-  console.log('Drawer open', motionProps);
-
   return (
     <Fragment>
       <RcDrawer

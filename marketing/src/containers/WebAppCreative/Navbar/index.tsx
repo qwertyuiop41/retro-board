@@ -11,6 +11,7 @@ import { DrawerContext } from '../../../common/contexts/DrawerContext';
 import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
 import logoImage from '../../../common/assets/image/webAppCreative/logo.png';
 import { MenuItem } from '@/types';
+import { useTranslation } from 'next-i18next';
 
 export const menuItems: MenuItem[] = [
   {
@@ -74,6 +75,7 @@ const Navbar = ({
   },
 }: NavbarProps) => {
   const { state, dispatch } = useContext(DrawerContext);
+  const { t } = useTranslation();
 
   // Toggle drawer
   const toggleHandler = () => {
@@ -101,12 +103,12 @@ const Navbar = ({
             />
             <Link href="#" legacyBehavior>
               <a className="navbar_button navbar_button_one">
-                <Button {...button} title="Login Now" />
+                <Button {...button} title={t('Nav.login')} />
               </a>
             </Link>
             <Link href="#" legacyBehavior>
               <a className="navbar_button navbar_button_two">
-                <Button {...button} title="Join Free" />
+                <Button {...button} title={t('Nav.join')} />
               </a>
             </Link>
             <Drawer
