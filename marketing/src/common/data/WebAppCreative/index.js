@@ -37,40 +37,6 @@ import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble
 
 export const clients = [envato, evernote, forbes, geekwire, slack, usaToday];
 
-export const howTos = [
-  {
-    id: 1,
-    icon: icon1,
-    title: 'Manage Smartly',
-    text: `Stay on top of your task lists and stay in touch with what's happening`,
-    linkLabel: 'Learn More',
-    link: '#',
-  },
-  {
-    id: 2,
-    icon: icon2,
-    title: 'Monitor user Analytics',
-    text: `Stay on top of your task lists and stay in touch with what's happening`,
-    linkLabel: 'Learn More',
-    link: '#',
-  },
-  {
-    id: 3,
-    icon: icon3,
-    title: 'Safe & Trusted',
-    text: `Get the best DoorDash experience with live order tracking.`,
-    linkLabel: 'Learn More',
-    link: '#',
-  },
-  {
-    id: 4,
-    icon: icon4,
-    title: 'Fast Customer Support',
-    text: `Get the best DoorDash experience with live order tracking.`,
-    linkLabel: 'Learn More',
-    link: '#',
-  },
-];
 
 export const analyticsTool = {
   slogan: 'Audience source monitoring',
@@ -122,36 +88,6 @@ export const dashboard = {
   ],
 };
 
-export const testimonials = [
-  {
-    id: 1,
-    logo: icon5,
-    author: 'Johnny Simpson',
-    designation: 'Head of Design',
-    quote: `Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors.`,
-  },
-  {
-    id: 2,
-    logo: icon6,
-    author: 'Deanna Hodges',
-    designation: 'Business HR Admin',
-    quote: `We deliver on such an expansive with innovation agenda with so many theme projects going on at any time, it can be hard to maintain momentum. So We appreciate to work with them.`,
-  },
-  {
-    id: 3,
-    logo: icon7,
-    author: 'Gracelyn Mason',
-    designation: 'Senior Marketer',
-    quote: `Flat item is loaded with the most of collaborative surfaces so you can do quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with statics.`,
-  },
-  {
-    id: 4,
-    logo: icon5,
-    author: 'Gracelyn Mason',
-    designation: 'Senior Marketer',
-    quote: `Flat item is loaded with the most of collaborative surfaces so you can do quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with statics.`,
-  },
-];
 
 export const appIntegration = {
   sectionTitle: 'Lets see what we integrate',

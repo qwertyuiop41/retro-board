@@ -3,17 +3,17 @@ import Fade from 'react-reveal/Fade';
 import { Icon } from 'react-icons-kit';
 import { check } from 'react-icons-kit/feather/check';
 import { ic_keyboard_arrow_right } from 'react-icons-kit/md/ic_keyboard_arrow_right';
-import Container from 'common/components/UI/Container';
-import NextImage from 'common/components/NextImage';
-import Button from 'common/components/Button';
-import Text from 'common/components/Text';
-import Link from 'common/components/Link';
-import Heading from 'common/components/Heading';
-import analytics from 'common/assets/image/webAppCreative/analytics.png';
+import Container from '../../../common/components/UI/Container';
+import NextImage from '../../../common/components/NextImage';
+import Button from '../../../common/components/Button';
+import Text from '../../../common/components/Text';
+import Link from '../../../common/components/Link';
+import Heading from '../../../common/components/Heading';
+import analytics from '../../../common/assets/image/webAppCreative/analytics.png';
 import Section, { Grid, Figure, Content, Features } from './analytics.style';
-import parallaxBg from 'common/assets/image/webAppCreative/parallax-1.png';
+import parallaxBg from '../../../common/assets/image/webAppCreative/parallax-1.png';
 
-import { analyticsTool } from 'common/data/WebAppCreative';
+import { analyticsTool } from '../../../common/data/WebAppCreative';
 
 const AnalyticsTool = () => {
   return (

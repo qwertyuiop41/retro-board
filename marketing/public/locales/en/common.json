@@ -14,6 +14,35 @@
 		"faq": "FAQ",
 		"login": "Login Now",
 		"join": "Join Free"
+	},
+	"Clients": {
+		"main": "Join the hundreds of companies using our product"
+	},
+	"HowItWorks": {
+		"heading": "We are different because..."
+	},
+	"Testimonials": {
+		"heading": "What people say about us",
+		"1": {
+			"author": "Johnny Simpson",
+			"designation": "Head of Design",
+			"quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
+		},
+		"2": {
+			"author": "Johnny Simpson",
+			"designation": "Head of Design",
+			"quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
+		},
+		"3": {
+			"author": "Johnny Simpson",
+			"designation": "Head of Design",
+			"quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
+		},
+		"4": {
+			"author": "Johnny Simpson",
+			"designation": "Head of Design",
+			"quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
+		}
 	}
 }
 	

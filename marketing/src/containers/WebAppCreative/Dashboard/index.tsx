@@ -1,12 +1,12 @@
 import React from 'react';
 import { Tab, TabList, TabPanel } from 'react-tabs';
-import Container from 'common/components/UI/Container';
-import NextImage from 'common/components/NextImage';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
+import Container from '../../../common/components/UI/Container';
+import NextImage from '../../../common/components/NextImage';
+import Text from '../../../common/components/Text';
+import Heading from '../../../common/components/Heading';
 import Section, { SectionHeading, ReactTabs } from './dashboard.style';
 
-import { dashboard } from 'common/data/WebAppCreative';
+import { dashboard } from '../../../common/data/WebAppCreative';
 
 const Dashboard = () => {
   return (

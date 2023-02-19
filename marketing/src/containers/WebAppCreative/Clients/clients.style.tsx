@@ -40,6 +40,9 @@ export const Figure = styled.figure`
   align-items: center;
   justify-content: center;
   opacity: 0.7;
+  img {
+    // border: 1px solid red;
+  }
 `;
 
 export const SliderWrapper = styled.div`

@@ -14,5 +14,34 @@
 		"faq": "FAQ",
 		"login": "Connexion",
 		"join": "Inscription"
+	},
+	"Clients": {
+		"main": "Rejoingnez les centaines d'entreprises qui nous ont fait confiance"
+	},
+	"HowItWorks": {
+		"heading": "Nous sommes différents, parce-que..."
+	},
+	"Testimonials": {
+		"heading": "Ce que les gens disent de nous",
+		"1": {
+			"author": "Jean LaPointe",
+			"designation": "Directeur Design",
+			"quote": "Retrospected nous est très utile, et blah blah blah, et encore du blah blah merci de remplir les trous"
+		},
+		"2": {
+			"author": "Jean LaPointe",
+			"designation": "Directeur Design",
+			"quote": "Retrospected nous est très utile, et blah blah blah, et encore du blah blah merci de remplir les trous"
+		},
+		"3": {
+			"author": "Jean LaPointe",
+			"designation": "Directeur Design",
+			"quote": "Retrospected nous est très utile, et blah blah blah, et encore du blah blah merci de remplir les trous"
+		},
+		"4": {
+			"author": "Jean LaPointe",
+			"designation": "Directeur Design",
+			"quote": "Retrospected nous est très utile, et blah blah blah, et encore du blah blah merci de remplir les trous"
+		}
 	}
 }

@@ -1,10 +1,39 @@
 import React from 'react';
-import Slider from 'react-slick';
+import Slider from 'react-slick'; // TODO
 import Container from '../../../common/components/UI/Container';
 import NextImage from '../../../common/components/NextImage';
 import Text from '../../../common/components/Text';
 import Section, { Title, SliderWrapper, Figure } from './clients.style';
-import { clients } from '../../../common/data/WebAppCreative';
+import { useTranslation } from 'next-i18next';
+import adidas from './adidas.png';
+import amazon from './amazon.png';
+import barclays from './barclays.png';
+import deloitte from './deloitte.png';
+import delta from './delta.png';
+import expedia from './expedia.png';
+import ibm from './ibm.png';
+import natwest from './natwest.png';
+import novartis from './novartis.png';
+import pwc from './pwc.png';
+import siemens from './siemens.png';
+import target from './target.png';
+import vodafone from './vodafone.png';
+
+const clients = [
+  adidas,
+  amazon,
+  barclays,
+  deloitte,
+  delta,
+  expedia,
+  ibm,
+  natwest,
+  novartis,
+  pwc,
+  siemens,
+  target,
+  vodafone,
+];
 
 const settings = {
   infinite: true,
@@ -17,6 +46,13 @@ const settings = {
     {
       breakpoint: 10000, // a unrealistically big number to cover up greatest screen resolution
       settings: 'unslick',
+    },
+    {
+      breakpoint: 2400,
+      settings: {
+        slidesToShow: 8,
+        slidesToScroll: 1,
+      },
     },
     {
       breakpoint: 1280,
@@ -50,17 +86,18 @@ const settings = {
 };
 
 const Clients = () => {
+  const { t } = useTranslation();
   return (
     <Section>
       <Container width="1400px">
         <Title>
-          <Text content="Join the 20,000+ companies using the Segment platform" />
+          <Text content={t('Clients.main')} />
         </Title>
         <SliderWrapper>
           <Slider {...settings}>
             {clients.map((client, i) => (
               <Figure key={i}>
-                <NextImage src={client} alt="logo" />
+                <NextImage src={client} alt="logo" width={128} />
               </Figure>
             ))}
           </Slider>
