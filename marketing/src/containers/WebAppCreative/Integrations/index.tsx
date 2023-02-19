@@ -1,11 +1,10 @@
-import React from 'react';
-import Container from 'common/components/UI/Container';
-import NextImage from 'common/components/NextImage';
-import Text from 'common/components/Text';
-import Heading from 'common/components/Heading';
+import Container from '../../../common/components/UI/Container';
+import NextImage from '../../../common/components/NextImage';
+import Text from '../../../common/components/Text';
+import Heading from '../../../common/components/Heading';
 import Section, { SectionHeading, SupportedApps } from './integration.style';
 
-import { appIntegration } from 'common/data/WebAppCreative';
+import { appIntegration } from '../../../common/data/WebAppCreative';
 
 const Integrations = () => {
   return (

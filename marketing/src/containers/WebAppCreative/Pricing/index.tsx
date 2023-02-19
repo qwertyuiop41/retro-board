@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Icon } from 'react-icons-kit';
 import Fade from 'react-reveal/Fade';
 import { ic_keyboard_arrow_right } from 'react-icons-kit/md/ic_keyboard_arrow_right';
 
-import Container from 'common/components/UI/Container';
-import Heading from 'common/components/Heading';
-import Button from 'common/components/Button';
-import Image from 'common/components/Image';
-import Text from 'common/components/Text';
+import Container from '../../../common/components/UI/Container';
+import Heading from '../../../common/components/Heading';
+import Button from '../../../common/components/Button';
+import Image from '../../../common/components/Image';
+import Text from '../../../common/components/Text';
 
-import { pricing } from 'common/data/WebAppCreative';
+import { pricing } from '../../../common/data/WebAppCreative';
 import {
   Section,
   SectionHeading,

@@ -1,7 +1,11 @@
 const getCollapsedHeight = () => ({ height: 0, opacity: 0 });
-const getRealHeight = (node) => ({ height: node.scrollHeight, opacity: 1 });
-const getCurrentHeight = (node) => ({ height: node.offsetHeight });
-const skipOpacityTransition = (_, event) => event.propertyName === 'height';
+const getRealHeight = (node: HTMLElement) => ({
+  height: node.scrollHeight,
+  opacity: 1,
+});
+const getCurrentHeight = (node: HTMLElement) => ({ height: node.offsetHeight });
+const skipOpacityTransition = (_: unknown, event: any) =>
+  event.propertyName === 'height';
 
 const collapseMotion = {
   motionName: 'rc-collapse-motion',

@@ -12,12 +12,12 @@ import HowItWorks from '../containers/WebAppCreative/HowItWorks';
 // import AnalyticsTool from '../containers/WebAppCreative/AnalyticsTool';
 // import Dashboard from '../containers/WebAppCreative/Dashboard';
 import Testimonials from '../containers/WebAppCreative/Testimonials';
-// import Integrations from 'containers/WebAppCreative/Integrations';
-// import Pricing from 'containers/WebAppCreative/Pricing';
-// import NewsFeed from 'containers/WebAppCreative/NewsFeed';
-// import Faq from 'containers/WebAppCreative/Faq';
-// import CallToAction from 'containers/WebAppCreative/CallToAction';
-// import Footer from 'containers/WebAppCreative/Footer';
+import Integrations from '../containers/WebAppCreative/Integrations';
+import Pricing from '../containers/WebAppCreative/Pricing';
+import NewsFeed from '../containers/WebAppCreative/NewsFeed';
+import Faq from '../containers/WebAppCreative/Faq';
+import CallToAction from '../containers/WebAppCreative/CallToAction';
+import Footer from '../containers/WebAppCreative/Footer';
 import {
   GlobalStyle,
   ContentWrapper,
@@ -26,14 +26,16 @@ import {
 } from '../containers/WebAppCreative/webAppCreative.style';
 import 'animate.css';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
-const webAppCreative = () => {
+const WebAppCreative = () => {
+  const { t } = useTranslation();
   return (
     <ThemeProvider theme={theme}>
       <Fragment>
         <Head>
-          <title>Web App Creative | A react next landing page</title>
-          <meta name="Description" content="React next landing page" />
+          <title>{t('SEO.title')}</title>
+          <meta name="Description" content={t('SEO.description')!} />
           <meta name="theme-color" content="#ec5555" />
         </Head>
 
@@ -52,14 +54,14 @@ const webAppCreative = () => {
           {/* <AnalyticsTool /> */}
           {/* <Dashboard /> */}
           <Testimonials />
-          {/* <CombinedSection>
+          <CombinedSection>
             <Integrations />
-            <Pricing />
+            {/* <Pricing /> */}
             <CornerPattern />
           </CombinedSection>
-          <NewsFeed />
-          <Faq />
-          <CallToAction />
+          {/* <NewsFeed /> */}
+          {/* <Faq /> */}
+          {/* <CallToAction />
           <Footer /> */}
         </ContentWrapper>
       </Fragment>
@@ -73,4 +75,4 @@ export const getStaticProps = async ({ locale }: { locale?: string }) => ({
   },
 });
 
-export default webAppCreative;
+export default WebAppCreative;

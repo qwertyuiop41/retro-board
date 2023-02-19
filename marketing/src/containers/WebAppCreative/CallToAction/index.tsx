@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Icon } from 'react-icons-kit';
 import { androidArrowDropdown } from 'react-icons-kit/ionicons/androidArrowDropdown';
-import Container from 'common/components/UI/Container';
-// import Button from 'common/components/Button';
+import Container from '../../../common/components/UI/Container';
+// import Button from '../../../common/components/Button';
 import { Button, MenuItem } from 'react-aria-menubutton';
-import Link from 'common/components/Link';
-import Heading from 'common/components/Heading';
-import Text from 'common/components/Text';
+import Link from '../../../common/components/Link';
+import Heading from '../../../common/components/Heading';
+import Text from '../../../common/components/Text';
 import Section, { Content, DownloadButton, DownloadOptions } from './cta.style';
 import bubble1 from 'common/assets/image/webAppCreative/cta-bubble-1.png';
 import bubble2 from 'common/assets/image/webAppCreative/cta-bubble-2.png';
@@ -15,12 +15,13 @@ const menuItemWords = ['Download for MacOS', 'Download for Windows x64'];
 
 const CallToAction = () => {
   const [downloadFor, setDownloadFor] = useState('Download for MacOS');
-  const handleSelection = (value, event) => {
+  const handleSelection = (value: string, event: unknown) => {
     setDownloadFor(value);
   };
   return (
     <Section>
-      <img src={bubble1?.src} className="bubble-1" alt="bubble1" />
+      <img src={bubble1?.src} className="bubble-1" alt="bubble1" />{' '}
+      {/* TODO IMAGE */}
       <Container width="1400px">
         <Content>
           <Heading content="Start making business with our software" />
