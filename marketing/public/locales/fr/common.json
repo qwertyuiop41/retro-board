@@ -123,5 +123,21 @@
 		"feature2": "Feature 2",
 		"feature3": "Feature 3",
 		"feature4": "Feature 4"
+	},
+	"Newsfeed": {
+		"heading": "Quoi de neuf à Retrospected ?"
+	},
+	"FAQ": {
+		"heading": "Vos Questions",
+		"data": [
+			{"question": "Pourquoi retrospected ?", "answer": "Parce-qu'on poutre"},
+			{"question": "Qu'est-ce que c'est ?", "answer": "C'est un truc qui fait des trucs"}
+		]
+	},
+	"CTA": {
+		"heading": "Commencez une Retrospective maintenant",
+		"description": "Join the thousands of users who are already using Retrospected",
+		"button": "Start a Retrospective",
+		"hint": "This will change your life!"
 	}
 }

@@ -7,13 +7,19 @@ import { minus } from 'react-icons-kit/entypo/minus';
 import Section, { SectionHeading, RcCollapse } from './faq.style';
 import { Panel } from 'rc-collapse';
 import motion from './motion-util';
+import { useTranslation } from 'next-i18next';
 
-import { faqs } from '../../../common/data/WebAppCreative';
+type FAQ = {
+  question: string;
+  answer: string;
+};
 
 const Faq = () => {
-  const [activeKey, setActiveKey] = useState(1);
+  const { t } = useTranslation();
+  const faqs = t('FAQ.data', { returnObjects: true }) as FAQ[];
+  const [activeKey, setActiveKey] = useState<React.Key | React.Key[]>(0);
 
-  const onChange = (activeKey: number) => {
+  const onChange = (activeKey: React.Key | React.Key[]) => {
     setActiveKey(activeKey);
   };
 
@@ -21,7 +27,7 @@ const Faq = () => {
     <Section id="faq">
       <Container className="container">
         <SectionHeading>
-          <Heading content="Frequently Ask Question" />
+          <Heading content={t('FAQ.heading')} />
         </SectionHeading>
         <RcCollapse
           collapsible={undefined}
@@ -30,13 +36,13 @@ const Faq = () => {
           onChange={onChange}
           openMotion={motion}
         >
-          {faqs?.map((faq) => (
+          {faqs?.map((faq, id) => (
             <Panel
-              key={faq.id}
+              key={id}
               showArrow={false}
               header={
                 <Fragment>
-                  <Heading as="h4" content={faq.title} />
+                  <Heading as="h4" content={faq.question} />
                   <span className="icon">
                     <Icon icon={minus} size={20} className="minus" />
                     <Icon icon={plus} size={20} className="plus" />
@@ -44,7 +50,7 @@ const Faq = () => {
                 </Fragment>
               }
             >
-              {faq.description}
+              {faq.answer}
             </Panel>
           ))}
         </RcCollapse>

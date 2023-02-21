@@ -124,6 +124,22 @@
 		"feature2": "Feature 2",
 		"feature3": "Feature 3",
 		"feature4": "Feature 4"
+	},
+	"Newsfeed": {
+		"heading": "What's new at Retrospected"
+	},
+	"FAQ": {
+		"heading": "Frequently Asked Questions",
+		"data": [
+			{"question": "What is love", "answer": "Baby don't hurt me no more"},
+			{"question": "What is the purpose of this?", "answer": "42, I think"}
+		]
+	},
+	"CTA": {
+		"heading": "Start a Retrospective now",
+		"description": "Join the thousands of users who are already using Retrospected",
+		"button": "Start a Retrospective",
+		"hint": "This will change your life!"
 	}
 }
 	

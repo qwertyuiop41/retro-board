@@ -10,13 +10,15 @@ import Link from '../../../common/components/Link';
 
 import { posts } from '../../../common/data/WebAppCreative';
 import { Section, SectionHeading, Grid, Article } from './newsFeed.style';
+import { useTranslation } from 'next-i18next';
 
 const NewsFeed = () => {
+  const { t } = useTranslation();
   return (
     <Section id="newsfeed">
       <Container width="1400px">
         <SectionHeading>
-          <Heading content="What our author post on Newsfeed" />
+          <Heading content={t('Newsfeed.heading')} />
         </SectionHeading>
         <Grid>
           {posts.map((post) => (
