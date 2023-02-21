@@ -6,14 +6,20 @@ import bubble1 from '../../../common/assets/image/webAppCreative/cta-bubble-1.pn
 import bubble2 from '../../../common/assets/image/webAppCreative/cta-bubble-2.png';
 import { useTranslation } from 'next-i18next';
 import Button from '@/common/components/Button';
+import NextImage from '@/common/components/NextImage';
 
 const CallToAction = () => {
   const { t } = useTranslation();
 
   return (
     <Section>
-      <img src={bubble1?.src} className="bubble-1" alt="bubble1" />{' '}
-      {/* TODO IMAGE */}
+      <NextImage
+        src={bubble1?.src}
+        className="bubble-1"
+        alt="bubble1"
+        width={195}
+        height={214}
+      />
       <Container width="1400px">
         <Content>
           <Heading content={t('CTA.heading')} />
@@ -22,7 +28,13 @@ const CallToAction = () => {
           <span>{t('CTA.hint')}</span>
         </Content>
       </Container>
-      <img src={bubble2?.src} className="bubble-2" alt="bubble2" />
+      <NextImage
+        src={bubble2?.src}
+        className="bubble-2"
+        alt="bubble2"
+        width={202}
+        height={257}
+      />
     </Section>
   );
 };

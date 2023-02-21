@@ -140,6 +140,17 @@
 		"description": "Join the thousands of users who are already using Retrospected",
 		"button": "Start a Retrospective",
 		"hint": "This will change your life!"
+	},
+	"Footer": {
+		"copyright": "Copyright © 2023 - Retrospected Ltd. All rights reserved.",
+		"about": "We create software with Love, from London, UK"
+	},
+	"Contact": {
+		"title": "Contact info",
+		"address": "Retrospected Ltd, London, UK",
+		"phone": "+44 (not used for now)",
+		"openingTime": "7 Days - 8am - 10pm",
+		"email": "support@retrospected.com"
 	}
 }
 	

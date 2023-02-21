@@ -8,10 +8,10 @@ export const Section = styled.footer`
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   @media screen and (max-width: 768px) {
     gap: 30px 30px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   @media screen and (max-width: 480px) {
     gap: 20px 0px;

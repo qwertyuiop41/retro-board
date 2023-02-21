@@ -18,18 +18,179 @@ import {
   FooterNav,
   SocialLinks,
 } from './footer.style';
-import { footerTop, footer } from '../../../common/data/WebAppCreative';
+import NextImage from '@/common/components/NextImage';
+import siteLogo from '../../../common/assets/image/webAppCreative/logo.png';
+import facebook from '../../../common/assets/image/webAppCreative/icons/facebook.png';
+import twitter from '../../../common/assets/image/webAppCreative/icons/twitter.png';
+import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble.png';
+import { useTranslation } from 'next-i18next';
+
+export const footerTop = {
+  about: {
+    logo: siteLogo,
+    text: `We run Advanced Search reports on the criteria you care about to see how work is progressing and where to focus your effort.`,
+  },
+  widgets: [
+    {
+      id: 2,
+      title: 'About Us',
+      list: [
+        {
+          id: 1,
+          title: 'Support Center',
+          link: '#',
+        },
+        {
+          id: 2,
+          title: 'Customer Support',
+          link: '#',
+        },
+        {
+          id: 3,
+          title: 'About Us',
+          link: '#',
+        },
+        {
+          id: 4,
+          title: 'Copyright',
+          link: '#',
+        },
+        {
+          id: 5,
+          title: 'Popular Campaign',
+          link: '#',
+        },
+      ],
+    },
+    {
+      id: 3,
+      title: 'Our Information',
+      list: [
+        {
+          id: 1,
+          title: 'Return Policy ',
+          link: '#',
+        },
+        {
+          id: 2,
+          title: 'Privacy Policy',
+          link: '#',
+        },
+        {
+          id: 3,
+          title: 'Terms & Conditions',
+          link: '#',
+        },
+        {
+          id: 4,
+          title: 'Site Map',
+          link: '#',
+        },
+        {
+          id: 5,
+          title: 'Store Hours',
+          link: '#',
+        },
+      ],
+    },
+    {
+      id: 4,
+      title: 'My Account',
+      list: [
+        {
+          id: 1,
+          title: 'Press inquiries',
+          link: '#',
+        },
+        {
+          id: 2,
+          title: 'Social media ',
+          link: '#',
+        },
+        {
+          id: 3,
+          title: 'directories',
+          link: '#',
+        },
+        {
+          id: 4,
+          title: 'Images & B-roll',
+          link: '#',
+        },
+        {
+          id: 5,
+          title: 'Permissions',
+          link: '#',
+        },
+      ],
+    },
+  ],
+  contactInfo: {
+    title: 'Contact info',
+    address: `Mohakhali DOHS, Amsterdam, Netherlands`,
+    phone: `+31 62 19 22 705`,
+    openingTime: `7 Days - 8am - 10pm`,
+    email: `info@redqteam.com`,
+  },
+};
+
+export const footer = {
+  copyright: `Copyright © ${new Date().getFullYear()} Superprops. All rights reserved`,
+  nav: [
+    {
+      id: 1,
+      title: 'Support',
+      link: '#',
+    },
+    {
+      id: 2,
+      title: 'Hiring',
+      link: '#',
+    },
+    {
+      id: 3,
+      title: 'Privacy',
+      link: '#',
+    },
+    {
+      id: 4,
+      title: 'Terms',
+      link: '#',
+    },
+  ],
+  socialLinks: [
+    {
+      id: 1,
+      link: 'http://facebook.com',
+      icon: facebook,
+      label: 'Facebook',
+    },
+    {
+      id: 2,
+      link: 'http://twitter.com',
+      icon: twitter,
+      label: 'Twitter',
+    },
+    {
+      id: 3,
+      link: 'http://dribbble.com',
+      icon: dribbble,
+      label: 'Dribbble',
+    },
+  ],
+};
 
 const Footer = () => {
+  const { t } = useTranslation();
   return (
     <Section>
       <Container width="1400px">
         <Grid>
           <AboutUs>
-            <Image src={footerTop.about.logo?.src} alt="Web App Creative" />
-            <Text content={footerTop.about.text} />
+            <Image src={footerTop.about.logo?.src} alt="Logo Retrospected" />
+            <Text content={t('Footer.about')} />
           </AboutUs>
-          {footerTop.widgets.map((item) => (
+          {/* {footerTop.widgets.map((item) => (
             <FooterWidget key={item.id}>
               <h4>{item.title}</h4>
               <ul>
@@ -40,52 +201,49 @@ const Footer = () => {
                 ))}
               </ul>
             </FooterWidget>
-          ))}
+          ))} */}
           <ContactInfo>
-            <Heading as="h4" content={footerTop.contactInfo.title} />
+            <Heading as="h4" content={t('Contact.title')} />
             <InfoItem>
               <Icon icon={ic_place} size={24} />
-              <Text content={footerTop.contactInfo.address} />
+              <Text content={t('Contact.address')} />
             </InfoItem>
-            <InfoItem>
+            {/* <InfoItem>
               <Icon icon={ic_phone} size={26} className="phone-icon" />
               <div>
-                <Text
-                  className="phone-number"
-                  content={footerTop.contactInfo.phone}
-                />
-                <Text content={footerTop.contactInfo.openingTime} />
+                <Text className="phone-number" content={t('Contact.phone')} />
+                <Text content={t('Contact.openingTime')} />
               </div>
-            </InfoItem>
+            </InfoItem> */}
             <InfoItem>
               <Icon icon={paperPlane} size={22} />
-              <Text content={footerTop.contactInfo.email} />
+              <Text content={t('Contact.email')} />
             </InfoItem>
           </ContactInfo>
         </Grid>
       </Container>
       <Container width="1400px">
         <FooterBottom>
-          <Text content={footer.copyright} />
-          <FooterNav>
+          <Text content={t('Footer.copyright')} />
+          {/* <FooterNav>
             {footer.nav.map((item) => (
               <li key={item.id}>
                 <Link href={item.link}>{item.title}</Link>
               </li>
             ))}
-          </FooterNav>
-          <SocialLinks>
+          </FooterNav> */}
+          {/* <SocialLinks>
             <span>Social:</span>
             <ul>
               {footer.socialLinks.map((item) => (
                 <li key={item.id}>
                   <Link href={item.link}>
-                    <img src={item.icon?.src} alt={item.label} />
+                    <NextImage src={item.icon?.src} alt={item.label} />
                   </Link>
                 </li>
               ))}
             </ul>
-          </SocialLinks>
+          </SocialLinks> */}
         </FooterBottom>
       </Container>
     </Section>
