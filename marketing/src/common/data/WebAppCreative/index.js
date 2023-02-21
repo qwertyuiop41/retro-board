@@ -11,7 +11,7 @@ import icon4 from '../../../common/assets/image/webAppCreative/icons/4.png';
 import icon5 from '../../../common/assets/image/webAppCreative/icons/5.png';
 import icon6 from '../../../common/assets/image/webAppCreative/icons/6.png';
 import icon7 from '../../../common/assets/image/webAppCreative/icons/7.png';
-import dashboardImg from '../../../common/assets/image/webAppCreative/dashboard-2.png';
+
 import asana from '../../../common/assets/image/webAppCreative/icons/asana.png';
 import drive from '../../../common/assets/image/webAppCreative/icons/drive.png';
 import dropbox from '../../../common/assets/image/webAppCreative/icons/dropbox.png';
@@ -37,41 +37,6 @@ import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble
 
 export const clients = [envato, evernote, forbes, geekwire, slack, usaToday];
 
-
-export const dashboard = {
-  sectionTitle: 'Get on the same page, fast.',
-  sectionDesc: `Each room is loaded with collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the most advanced theme editor.`,
-  tabs: [
-    {
-      id: 1,
-      title: 'Dashboard',
-      content: {
-        image: dashboardImg,
-      },
-    },
-    {
-      id: 2,
-      title: 'Whiteboard',
-      content: {
-        image: dashboardImg,
-      },
-    },
-    {
-      id: 3,
-      title: 'Transaction',
-      content: {
-        image: dashboardImg,
-      },
-    },
-    {
-      id: 4,
-      title: 'Float',
-      content: {
-        image: dashboardImg,
-      },
-    },
-  ],
-};
 
 
 export const appIntegration = {

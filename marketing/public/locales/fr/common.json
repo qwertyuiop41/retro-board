@@ -115,5 +115,13 @@
 			"link": "https://docs.retrospected.com",
 			"label": "Discover our documentation"
 		}
+	},
+	"Features": {
+		"heading": "Commencez une rétro en quelques secondes",
+		"description":"Starting or joining a retro is as easy as 1, 2, 3. It's friction-less.",
+		"feature1": "Fonctionalité 1",
+		"feature2": "Feature 2",
+		"feature3": "Feature 3",
+		"feature4": "Feature 4"
 	}
 }
