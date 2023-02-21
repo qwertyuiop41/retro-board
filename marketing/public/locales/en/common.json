@@ -100,6 +100,22 @@
 				"Awesome documentation"
 			]
 		}
+	},
+	"SelfHosted": {
+		"slogan": "Self Hosting",
+		"title": "Retrospected on your premises",
+		"desc": "Keep complete control of your data by self-hosting Retrospected. One-time fee, unlimited updates. Get up and running with our amazing documentation in no time.",
+		"features": [
+			"Complete control: your data stays on your premises",
+			"Easy to install",
+			"Administration Panel",
+			"All users are Pro",
+			"Free updates, forever"
+		],
+		"button": {
+			"link": "https://docs.retrospected.com",
+			"label": "Discover our documentation"
+		}
 	}
 }
 	

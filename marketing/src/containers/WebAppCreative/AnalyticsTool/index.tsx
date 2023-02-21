@@ -12,10 +12,10 @@ import Heading from '../../../common/components/Heading';
 import analytics from '../../../common/assets/image/webAppCreative/analytics.png';
 import Section, { Grid, Figure, Content, Features } from './analytics.style';
 import parallaxBg from '../../../common/assets/image/webAppCreative/parallax-1.png';
-
-import { analyticsTool } from '../../../common/data/WebAppCreative';
+import { useTranslation } from 'next-i18next';
 
 const AnalyticsTool = () => {
+  const { t } = useTranslation();
   return (
     <Section bgImage={parallaxBg?.src} bgImageAlt="the cat" strength={200}>
       <Container width="1400px">
@@ -26,20 +26,22 @@ const AnalyticsTool = () => {
             </Figure>
           </Fade>
           <Content>
-            <Text className="subtitle" content={analyticsTool.slogan} />
-            <Heading content={analyticsTool.title} />
-            <Text className="description" content={analyticsTool.desc} />
+            <Text className="subtitle" content={t('SelfHosted.slogan')} />
+            <Heading content={t('SelfHosted.title')} />
+            <Text className="description" content={t('SelfHosted.desc')} />
             <Features>
-              {analyticsTool.features.map((feat, i) => (
+              {(
+                t('SelfHosted.features', { returnObjects: true }) as string[]
+              ).map((feat, i) => (
                 <li key={i}>
                   <Icon icon={check} size={22} />
                   {feat}
                 </li>
               ))}
             </Features>
-            <Link href={analyticsTool.button.link} className="explore">
+            <Link href={t('SelfHosted.button.link')} className="explore">
               <Button
-                title={analyticsTool.button.label}
+                title={t('SelfHosted.button.label')!}
                 icon={<Icon icon={ic_keyboard_arrow_right} size={24} />}
               />
             </Link>

@@ -9,8 +9,8 @@ import Banner from '../containers/WebAppCreative/Banner';
 import Navbar from '../containers/WebAppCreative/Navbar';
 import Clients from '../containers/WebAppCreative/Clients';
 import HowItWorks from '../containers/WebAppCreative/HowItWorks';
-// import AnalyticsTool from '../containers/WebAppCreative/AnalyticsTool';
-// import Dashboard from '../containers/WebAppCreative/Dashboard';
+import AnalyticsTool from '../containers/WebAppCreative/AnalyticsTool';
+import Dashboard from '../containers/WebAppCreative/Dashboard';
 import Testimonials from '../containers/WebAppCreative/Testimonials';
 import Integrations from '../containers/WebAppCreative/Integrations';
 import Pricing from '../containers/WebAppCreative/Pricing';
@@ -51,8 +51,8 @@ const WebAppCreative = () => {
           <Banner />
           <Clients />
           <HowItWorks />
-          {/* <AnalyticsTool /> */}
-          {/* <Dashboard /> */}
+          <AnalyticsTool />
+          <Dashboard />
           <Testimonials />
           <CombinedSection>
             <Integrations />

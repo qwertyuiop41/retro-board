@@ -38,21 +38,6 @@ import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble
 export const clients = [envato, evernote, forbes, geekwire, slack, usaToday];
 
 
-export const analyticsTool = {
-  slogan: 'Audience source monitoring',
-  title: 'Advanced analytics tools to keep you in control & customizable',
-  desc: `Pick one of our stock themes, or create your custom theme with the most advanced theme editor on any online survey building tool.`,
-  features: [
-    'Chat promt module supported',
-    'Enjoy unlimited features by paid plans',
-    'Manage ultimate conversation',
-  ],
-  button: {
-    link: '#',
-    label: 'Explore More',
-  },
-};
-
 export const dashboard = {
   sectionTitle: 'Get on the same page, fast.',
   sectionDesc: `Each room is loaded with collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the most advanced theme editor.`,
