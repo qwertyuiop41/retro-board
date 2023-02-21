@@ -47,6 +47,59 @@
 			"designation": "Head of Design",
 			"quote": "Each room is loaded with the most collaborative surfaces so you can quickly take notes, capture to-dos, and share ideas. Pick one of our stock themes, or create your custom theme with the editors."
 		}
+	},
+	"Pricing": {
+		"heading": "Explore our exciting pricing",
+		"monthly": "Monthly",
+		"yearly": "Yearly",
+		"currency": "$",
+		"subscribe": "Subscribe Now",
+		"login": "Login Now",
+		"basic": {
+			"title": "Basic",
+			"price": 0,
+			"recurrence": "per month",
+			"features": [
+				"Unlimited Retrospectives",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"40 posts"
+			]
+		},
+		"pro": {
+			"title": "Pro",
+			"price": 12.90,
+			"recurrence": "per month",
+			"features": [
+				"Unlimited Retrospectives",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"Unlimited posts",
+				"20 users"
+			]
+		},
+		"unlimited": {
+			"title": "Unlimited",
+			"price": 49.95,
+			"recurrence": "per month",
+			"features": [
+				"Unlimited Retrospectives",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"Unlimited posts",
+				"Unlimited users"
+			]
+		},
+		"hosted": {
+			"title": "Self Hosted",
+			"price": 649,
+			"recurrence": "One-time fee",
+			"features": [
+				"Everything from Unlimited",
+				"All users are Pro by default",
+				"Awesome documentation"
+			]
+		}
 	}
 }
 	

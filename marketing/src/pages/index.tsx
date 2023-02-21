@@ -56,7 +56,7 @@ const WebAppCreative = () => {
           <Testimonials />
           <CombinedSection>
             <Integrations />
-            {/* <Pricing /> */}
+            <Pricing />
             <CornerPattern />
           </CombinedSection>
           {/* <NewsFeed /> */}

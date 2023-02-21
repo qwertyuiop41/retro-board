@@ -47,5 +47,57 @@
 			"designation": "Directeur Design",
 			"quote": "Retrospected nous est très utile, et blah blah blah, et encore du blah blah merci de remplir les trous"
 		}
+	},
+	"Pricing": {
+		"heading": "Nos prix",
+		"monthly": "Par mois",
+		"yearly": "Par an",
+		"currency": "€",
+		"subscribe": "Acheter maintenant",
+		"login": "Connectez-vous",
+		"basic": {
+			"title": "Basic",
+			"price": 0,
+			"features": [
+				"Retrospectives illimitées",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"40 posts"
+			]
+		},
+		"pro": {
+			"title": "Pro",
+			"price": 11.90,
+			"recurrence": "par mois",
+			"features": [
+				"Unlimited Retrospectives",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"Unlimited posts",
+				"20 users"
+			]
+		},
+		"unlimited": {
+			"title": "Unlimited",
+			"price": 49.95,
+			"recurrence": "par mois",
+			"features": [
+				"Unlimited Retrospectives",
+				"Unlimited Team Members",
+				"Unlimited Action Items",
+				"Unlimited posts",
+				"Unlimited users"
+			]
+		},
+		"hosted": {
+			"title": "Self Hosted",
+			"price": 599,
+			"recurrence": "une seule fois",
+			"features": [
+				"Everything from Unlimited",
+				"All users are Pro by default",
+				"Awesome documentation"
+			]
+		}
 	}
 }

@@ -80,11 +80,11 @@ export const SwitcherWrapper = styled.div`
 export const Grid = styled.div`
   gap: 35px;
   display: grid;
-  grid-template-columns: repeat(3, 360px);
+  grid-template-columns: repeat(4, 360px);
   justify-content: center;
   @media screen and (max-width: 1024px) {
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
   @media screen and (max-width: 480px) {
     grid-template-columns: 1fr;
