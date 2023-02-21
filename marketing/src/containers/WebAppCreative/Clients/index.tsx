@@ -18,9 +18,11 @@ import pwc from './pwc.png';
 import siemens from './siemens.png';
 import target from './target.png';
 import vodafone from './vodafone.png';
-import dbahn from './db.svg';
+import dbahn from './db.png';
 
-const clients = [
+type ImageType = typeof vodafone;
+
+const clients: ImageType[] = [
   dbahn,
   adidas,
   amazon,
@@ -101,7 +103,12 @@ const Clients = () => {
           <Slider {...settings}>
             {clients.map((client, i) => (
               <Figure key={i}>
-                <NextImage src={client} alt="logo" width={128} />
+                <NextImage
+                  src={client}
+                  alt="logo"
+                  width={128}
+                  placeholder="blur"
+                />
               </Figure>
             ))}
           </Slider>

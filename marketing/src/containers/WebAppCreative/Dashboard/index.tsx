@@ -62,7 +62,11 @@ const Dashboard = () => {
           {dashboard.tabs.map((tab) => (
             <TabPanel key={tab.id}>
               <figure className="animate__animated animate__fadeInUp">
-                <NextImage src={tab.content.image} alt={t(tab.title)} />
+                <NextImage
+                  src={tab.content.image}
+                  alt={t(tab.title)}
+                  placeholder="blur"
+                />
               </figure>
             </TabPanel>
           ))}
