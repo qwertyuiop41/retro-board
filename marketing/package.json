@@ -18,6 +18,7 @@
     "@types/react-aria-menubutton": "^6.2.9",
     "@types/react-dom": "18.0.11",
     "@types/react-scrollspy": "^3.3.5",
+    "@types/react-slick": "^0.23.10",
     "@types/react-stickynode": "^4.0.0",
     "@types/styled-components": "^5.1.26",
     "@types/styled-system": "^5.1.16",

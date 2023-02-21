@@ -1,5 +1,5 @@
 import React from 'react';
-import Slider from 'react-slick'; // TODO
+import Slider, { Settings } from 'react-slick';
 import Container from '../../../common/components/UI/Container';
 import NextImage from '../../../common/components/NextImage';
 import Text from '../../../common/components/Text';
@@ -35,11 +35,14 @@ const clients = [
   vodafone,
 ];
 
-const settings = {
+const settings: Settings = {
+  className: 'center',
   infinite: true,
   speed: 500,
   slidesToShow: 4,
   slidesToScroll: 1,
+  centerMode: true,
+  centerPadding: '0',
   arrows: false,
   dots: true,
   responsive: [

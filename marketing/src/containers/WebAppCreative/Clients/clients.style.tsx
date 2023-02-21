@@ -40,6 +40,7 @@ export const Figure = styled.figure`
   align-items: center;
   justify-content: center;
   opacity: 0.7;
+  outline: 1px solid red;
   img {
     // border: 1px solid red;
   }
