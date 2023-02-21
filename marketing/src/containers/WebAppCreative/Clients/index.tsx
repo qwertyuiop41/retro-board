@@ -18,8 +18,10 @@ import pwc from './pwc.png';
 import siemens from './siemens.png';
 import target from './target.png';
 import vodafone from './vodafone.png';
+import dbahn from './db.svg';
 
 const clients = [
+  dbahn,
   adidas,
   amazon,
   barclays,
@@ -31,8 +33,8 @@ const clients = [
   novartis,
   pwc,
   siemens,
-  target,
-  vodafone,
+  // target,
+  // vodafone,
 ];
 
 const settings: Settings = {
@@ -42,7 +44,6 @@ const settings: Settings = {
   slidesToShow: 4,
   slidesToScroll: 1,
   centerMode: true,
-  centerPadding: '0',
   arrows: false,
   dots: true,
   responsive: [

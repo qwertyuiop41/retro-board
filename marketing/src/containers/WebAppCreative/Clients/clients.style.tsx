@@ -40,10 +40,6 @@ export const Figure = styled.figure`
   align-items: center;
   justify-content: center;
   opacity: 0.7;
-  outline: 1px solid red;
-  img {
-    // border: 1px solid red;
-  }
 `;
 
 export const SliderWrapper = styled.div`
@@ -67,6 +63,12 @@ export const SliderWrapper = styled.div`
     img {
       margin: 0 auto;
     }
+  }
+  .slick-track {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 20px;
   }
   .slick-dots {
     display: flex !important;
