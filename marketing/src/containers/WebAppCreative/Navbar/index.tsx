@@ -9,7 +9,7 @@ import HamburgMenu from '../../../common/components/HamburgMenu';
 import Container from '../../../common/components/UI/Container';
 import { DrawerContext } from '../../../common/contexts/DrawerContext';
 import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
-import logoImage from '../../../common/assets/image/webAppCreative/logo.png';
+import logoImage from './logo.png';
 import { MenuItem } from '@/types';
 import { useTranslation } from 'next-i18next';
 
@@ -88,13 +88,15 @@ const Navbar = ({
     <NavbarWrapper {...navbarStyle}>
       <Container width="1400px">
         <Box {...row}>
-          {/* <Logo
+          <Logo
             href="#"
             logoSrc={logoImage}
             title="SaaS Creative"
             logoStyle={logoStyle}
             className="main-logo"
-          /> */}
+            width={32}
+            height={32}
+          />
           <Box {...menuWrapper} className="mainMenuWrapper">
             <ScrollSpyMenu
               className="main_menu"

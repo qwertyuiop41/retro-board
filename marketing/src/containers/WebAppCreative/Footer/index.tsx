@@ -19,7 +19,7 @@ import {
   SocialLinks,
 } from './footer.style';
 import NextImage from '@/common/components/NextImage';
-import siteLogo from '../../../common/assets/image/webAppCreative/logo.png';
+import siteLogo from '../Navbar/logo.png';
 import facebook from '../../../common/assets/image/webAppCreative/icons/facebook.png';
 import twitter from '../../../common/assets/image/webAppCreative/icons/twitter.png';
 import dribbble from '../../../common/assets/image/webAppCreative/icons/dribbble.png';
@@ -187,7 +187,7 @@ const Footer = () => {
       <Container width="1400px">
         <Grid>
           <AboutUs>
-            <Image src={footerTop.about.logo?.src} alt="Logo Retrospected" />
+            <NextImage src={siteLogo} alt="Logo Retrospected" />
             <Text content={t('Footer.about')} />
           </AboutUs>
           {/* {footerTop.widgets.map((item) => (
