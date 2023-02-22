@@ -7,9 +7,11 @@ import bubble2 from '../../../common/assets/image/webAppCreative/cta-bubble-2.pn
 import { useTranslation } from 'next-i18next';
 import Button from '@/common/components/Button';
 import NextImage from '@/common/components/NextImage';
+import { useConfig } from '@/common/hooks/useConfig';
 
 const CallToAction = () => {
   const { t } = useTranslation();
+  const { appUrl } = useConfig();
 
   return (
     <Section>
@@ -24,7 +26,9 @@ const CallToAction = () => {
         <Content>
           <Heading content={t('CTA.heading')} />
           <Text content={t('CTA.description')} />
-          <Button title={t('CTA.button')!} />
+          <a href={appUrl}>
+            <Button title={t('CTA.button')!} />
+          </a>
           <span>{t('CTA.hint')}</span>
         </Content>
       </Container>

@@ -9,12 +9,13 @@ import Section, {
   Subscribe,
   Figure,
 } from './banner.style';
-import dashboard from '../../../common/assets/image/webAppCreative/dashboard.png';
 import screenshot from './mockup-1-02.webp';
 import { useTranslation } from 'next-i18next';
+import { useConfig } from '@/common/hooks/useConfig';
 
 const Banner = () => {
   const { t } = useTranslation('common');
+  const { appUrl } = useConfig();
   return (
     <Section id="home">
       <Container width="1400px">
@@ -29,7 +30,9 @@ const Banner = () => {
               content={t('Banner.text')}
             />
             <Subscribe className="animate__animated animate__fadeInUp">
-              <Button title={t('Banner.subscribeToday')!} type="submit" />
+              <a href={appUrl}>
+                <Button title={t('Banner.subscribeToday')!} type="submit" />
+              </a>
             </Subscribe>
           </BannerContent>
           <Figure className="animate__animated animate__fadeInUp animate__fast">

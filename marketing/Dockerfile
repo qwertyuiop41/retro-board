@@ -27,7 +27,8 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
-ARG NEXT_PUBLIC_MEASUREMENT_ID=APP_NEXT_PUBLIC_MEASUREMENT_ID 
+ARG NEXT_PUBLIC_MEASUREMENT_ID=APP_NEXT_PUBLIC_MEASUREMENT_ID
+ARG NEXT_PUBLIC_APP_URL=APP_NEXT_PUBLIC_APP_URL
 RUN yarn build
 
 # If using npm comment out above and use below instead

@@ -12,6 +12,7 @@ import ScrollSpyMenu from '../../../common/components/ScrollSpyMenu';
 import logoImage from './logo.png';
 import { MenuItem } from '@/types';
 import { useTranslation } from 'next-i18next';
+import { useConfig } from '@/common/hooks/useConfig';
 
 export const menuItems: MenuItem[] = [
   {
@@ -76,6 +77,7 @@ const Navbar = ({
 }: NavbarProps) => {
   const { state, dispatch } = useContext(DrawerContext);
   const { t } = useTranslation();
+  const { appUrl } = useConfig();
 
   // Toggle drawer
   const toggleHandler = () => {
@@ -104,12 +106,12 @@ const Navbar = ({
               offset={-70}
             />
             <Link href="#" legacyBehavior>
-              <a className="navbar_button navbar_button_one">
+              <a className="navbar_button navbar_button_one" href={appUrl}>
                 <Button {...button} title={t('Nav.login')} />
               </a>
             </Link>
             <Link href="#" legacyBehavior>
-              <a className="navbar_button navbar_button_two">
+              <a className="navbar_button navbar_button_two" href={appUrl}>
                 <Button {...button} title={t('Nav.join')} />
               </a>
             </Link>

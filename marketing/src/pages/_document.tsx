@@ -1,8 +1,9 @@
+import { useConfig } from '@/common/hooks/useConfig';
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
-const GA_ID = process.env.NEXT_PUBLIC_MEASUREMENT_ID;
 
 export default function Document() {
+  const config = useConfig();
   return (
     <Html lang="en">
       <Head>
@@ -13,7 +14,7 @@ export default function Document() {
         />
         <Script
           strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${config.measurementId}`}
         />
         <Script
           id="gtag"
@@ -24,7 +25,7 @@ export default function Document() {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             console.log('_document');
-            gtag('config', '${GA_ID}');
+            gtag('config', '${config.measurementId}');
           `,
           }}
         />
