@@ -27,6 +27,7 @@ COPY . .
 # Uncomment the following line in case you want to disable telemetry during the build.
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+ARG NEXT_PUBLIC_MEASUREMENT_ID=APP_NEXT_PUBLIC_MEASUREMENT_ID 
 RUN yarn build
 
 # If using npm comment out above and use below instead
@@ -44,6 +45,9 @@ RUN addgroup --system --gid 1001 nodejs
 RUN adduser --system --uid 1001 nextjs
 
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/docker/entrypoint.sh ./entrypoint.sh
+
+RUN ["chmod", "+x", "/app/entrypoint.sh"]
 
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
@@ -55,5 +59,7 @@ USER nextjs
 EXPOSE 3000
 
 ENV PORT 3000
+
+ENTRYPOINT ["/app/entrypoint.sh"]
 
 CMD ["node", "server.js"]

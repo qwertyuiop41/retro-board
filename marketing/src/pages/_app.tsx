@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import Script from 'next/script';
 import { appWithTranslation } from 'next-i18next';
 import { Modal } from '@redq/reuse-modal';
 import '@redq/reuse-modal/es/index.css';
