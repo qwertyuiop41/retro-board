@@ -1,7 +1,9 @@
 # retro-board
 
-[![Build Status](https://travis-ci.org/antoinejaussoin/retro-board.svg?branch=develop)](https://travis-ci.org/antoinejaussoin/retro-board)
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/antoinejaussoin/retro-board)
+[![Master Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/master.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/master.yml)
+[![Canary Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/canary.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/canary.yml)
+[![Alpha Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/alpha.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/alpha.yml)
 
 This is a Retrospective Idea board, powering [retrospected.com](http://www.retrospected.com).
 
@@ -84,6 +86,8 @@ You can start an instance of Retrospected in 5 minutes by following the [quick-s
 This will run a demo version, which you can turn into a fully licenced version by purchasing a [Self Hosted licence](https://www.retrospected.com/subscribe?product=self-hosted).
 
 ## Versions History
+
+### Version 5.0.0
 
 ### Version 4.19.3 (hotfix)
 
