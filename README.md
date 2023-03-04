@@ -1,11 +1,11 @@
-# retro-board
+# Retrospected
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/antoinejaussoin/retro-board)
 [![Master Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/master.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/master.yml)
 [![Canary Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/canary.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/canary.yml)
 [![Alpha Build](https://github.com/antoinejaussoin/retro-board/actions/workflows/alpha.yml/badge.svg)](https://github.com/antoinejaussoin/retro-board/actions/workflows/alpha.yml)
 
-This is a Retrospective Idea board, powering [retrospected.com](http://www.retrospected.com).
+[Retrospected](http://www.retrospected.com) is a free Real-time Agile Retrospective Board for engineering teams.
 
 &nbsp;
 
@@ -21,7 +21,7 @@ This is a Retrospective Idea board, powering [retrospected.com](http://www.retro
   <img src="./content/logos/socketio.png" height="65">
 </p>
 
-![Retrospected.com](/content/screenshot-v4.jpeg?raw=true 'Retrospected.com')
+![Retrospected.com](/content/screenshot-v5.png?raw=true 'Retrospected.com')
 
 This project is both an actual product, and also a technology demo using the latest and greatest JavaScript/TypeScript libraries of the month.
 
@@ -30,17 +30,16 @@ It features the following technologies:
 - [React 18](https://github.com/facebook/react)
 - [React Hooks](https://reactjs.org/docs/hooks-intro.html)
 - [React Router 6](https://reactrouter.com/)
-- [TypeScript 4.6](https://www.typescriptlang.org/)
+- [TypeScript 4.9](https://www.typescriptlang.org/)
 - [Recoil.js](https://recoiljs.org), as the global state management library
 - [Socket IO](http://socket.io)
-- [Webpack 5](https://github.com/webpack/webpack) (See older versions for Webpack 1, 2 and 3)
-- [Create React App 5](https://create-react-app.dev/docs/getting-started/)
+- [Vite](https://vitejs.dev/), as the bundler
 - [MUI 5](https://mui.com) for our components (previously known as Material-UI)
 - [Material UI design](https://www.google.com/design/spec/material-design/introduction.html)
 - [Emotion](https://emotion.sh/docs/introduction)
 - [Multilingual](https://stackoverflow.com/questions/33413880/react-redux-and-multilingual-internationalization-apps-architecture) / Internationalization
 - [Postgres](https://www.postgresql.org/)
-- [Node 16](https://nodejs.org/en/)
+- [Node 18](https://nodejs.org/en/)
 - [Passport](http://www.passportjs.org/) for seamless OAuth authentication with:
   - Google
   - Twitter
@@ -50,7 +49,7 @@ It features the following technologies:
   - Okta
 - [Giphy](https://giphy.com/) because adding a bit of fun to your retro can't hurt!
 - [React Beautiful DND](https://github.com/atlassian/react-beautiful-dnd) to allow re-ordering and grouping by drag-and-drop
-- [Jest](https://facebook.github.io/jest) for Unit Testing
+- [Vitest](https://vitest.dev), for Unit Testing
 - [React Testing Library](https://testing-library.com/docs/react-testing-library/intro), for Integration Tests
 - [Yarn](https://yarnpkg.com/en/), replacing NPM
 - [Docker](https://docker.com), for easy deployment
@@ -59,9 +58,13 @@ It features the following technologies:
 - [Multi-Architecture](https://github.com/docker/buildx/), for automatic compatibility with ARM-based servers
 - [Stripe](https://stripe.com/), for our payment solution
 - [Docusaurus](http://docusaurus.io/), for our documentation
+- [NextJS](https://nextjs.org/), for our landing page
 
-Previous versions, up to v1.0.1 featured the following libraries:
+Previous versions featured the following libraries:
 
+- ~~[Webpack 5](https://github.com/webpack/webpack) (See older versions for Webpack 1, 2 and 3)~~
+- ~~[Create React App 5](https://create-react-app.dev/docs/getting-started/)~~
+- ~~[Jest](https://facebook.github.io/jest) for Unit Testing~~
 - ~~[Redux](https://github.com/reactjs/redux)~~
 - ~~[CSS Modules](https://github.com/css-modules/css-modules)~~
 - ~~[redux-saga](https://github.com/yelouafi/redux-saga)~~
@@ -88,6 +91,13 @@ This will run a demo version, which you can turn into a fully licenced version b
 ## Versions History
 
 ### Version 5.0.0
+
+- Brand new landing page, built with NextJS, separated from the main app.
+- Multilingual support for this new landing age (English and French for now), with auto-detection of the user's language.
+- Migration from CRA (create-react-app) to Vite, which is much faster and more flexible.
+- Migration to Google Analytics 4
+- Adding a demo mode: one-click to create a demo session, with a demo account.
+- Improved support for self-hosted licence generation
 
 ### Version 4.19.3 (hotfix)
 
