@@ -91,7 +91,7 @@
   "scripts": {
     "start": "vite",
     "build": "NODE_ENV=production tsc && vite build",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
+    "lint": "eslint 'src/**/*.{ts,tsx}' --max-warnings=0",
     "test": "vitest",
     "ci-test": "CI=true yarn test",
     "analyze": "source-map-explorer build/static/js/*"
