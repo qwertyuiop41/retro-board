@@ -20,12 +20,14 @@ import { useTranslation } from 'next-i18next';
 import { getAllLegalDocuments, LegalDocumentMetadata } from '@/lib/getLegal';
 import { MenuItem } from '@/types';
 import Layout from '@/containers/Layout/Layout';
+import { BlogMetadata, getAllBlogs } from '@/lib/getBlog';
 
 type HomePageProps = {
   legals: LegalDocumentMetadata[];
+  blogs: BlogMetadata[];
 };
 
-export default function HomePage({ legals }: HomePageProps) {
+export default function HomePage({ legals, blogs }: HomePageProps) {
   const { t } = useTranslation();
   return (
     <Layout menuItems={menuItems} legals={legals}>
@@ -40,10 +42,13 @@ export default function HomePage({ legals }: HomePageProps) {
       {/* <Testimonials /> */}
       <CombinedSection>
         <Integrations />
-        <Pricing />
-        <CornerPattern />
       </CombinedSection>
-      {/* <NewsFeed /> */}
+      <NewsFeed articles={blogs} />
+      <CombinedSection>
+        <Pricing />
+      </CombinedSection>
+      <CornerPattern />
+
       <Faq />
       <CallToAction />
     </Layout>
@@ -85,10 +90,12 @@ export const menuItems: MenuItem[] = [
 
 export async function getStaticProps({ locale }: { locale?: string }) {
   const legals = getAllLegalDocuments();
+  const blogs = getAllBlogs();
 
   return {
     props: {
       legals,
+      blogs,
       ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
   };

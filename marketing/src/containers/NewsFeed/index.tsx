@@ -1,4 +1,5 @@
 import React from 'react';
+import NextLink from 'next/link';
 import { Icon } from 'react-icons-kit';
 import Fade from 'react-reveal/Fade';
 import { arrowRight } from 'react-icons-kit/feather/arrowRight';
@@ -9,10 +10,21 @@ import Text from '@/common/components/Text';
 import Link from '@/common/components/Link';
 
 import { posts } from '@/common/data/WebAppCreative';
-import { Section, SectionHeading, Grid, Article } from './newsFeed.style';
+import {
+  Section,
+  SectionHeading,
+  Grid,
+  Article,
+  ImageContainer,
+} from './newsFeed.style';
 import { useTranslation } from 'next-i18next';
+import { BlogMetadata } from '@/lib/getBlog';
 
-const NewsFeed = () => {
+type NewsFeedProps = {
+  articles: BlogMetadata[];
+};
+
+const NewsFeed = ({ articles }: NewsFeedProps) => {
   const { t } = useTranslation();
   return (
     <Section id="newsfeed">
@@ -21,15 +33,18 @@ const NewsFeed = () => {
           <Heading content={t('Newsfeed.heading')} />
         </SectionHeading>
         <Grid>
-          {posts.map((post) => (
-            <Fade key={post.id} up delay={post.id * 100}>
+          {articles.map((post, i) => (
+            <Fade key={post.slug} up delay={(i + 1) * 100}>
               <Article>
-                <NextImage src={post.image} alt={post.title} />
+                <ImageContainer>
+                  <NextImage src={post.cover} alt={post.title} fill />
+                  {/* <img src={post.cover} alt={post.title} /> */}
+                </ImageContainer>
                 <Text content={post.date} />
                 <Heading as="h4" content={post.title} />
-                <Link href={post.excerpt.link}>
-                  {post.excerpt.label} <Icon icon={arrowRight} />
-                </Link>
+                <NextLink href={`blog/${post.slug}`}>
+                  {post.subtitle} <Icon icon={arrowRight} />
+                </NextLink>
               </Article>
             </Fade>
           ))}
