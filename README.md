@@ -19,6 +19,8 @@
   <img src="./content/logos/k8s.svg" height="65">
   &nbsp;
   <img src="./content/logos/socketio.png" height="65">
+  &nbsp;
+  <img src="./content/logos/vite.png" height="65">
 </p>
 
 ![Retrospected.com](/content/screenshot-v5.png?raw=true 'Retrospected.com')
@@ -92,12 +94,12 @@ This will run a demo version, which you can turn into a fully licenced version b
 
 ### Version 5.0.0
 
-- Brand new landing page, built with NextJS, separated from the main app.
-- Multilingual support for this new landing age (English and French for now), with auto-detection of the user's language.
-- Migration from CRA (create-react-app) to Vite, which is much faster and more flexible.
-- Migration to Google Analytics 4
-- Adding a demo mode: one-click to create a demo session, with a demo account.
-- Improved support for self-hosted licence generation
+- 👩‍💻 Brand new landing page, built with NextJS, separated from the main app. The app is now available at [https://app.retrospected.com](https://app.retrospected.com) and the landing page at [https://www.retrospected.com](https://www.retrospected.com).
+- 🇫🇷 / 🇬🇧 Multilingual support for this new landing age (English and French for now), with auto-detection of the user's language.
+- 🚀 Migration from CRA (create-react-app) to Vite, which is much faster and more flexible.
+- 💯 Migration to Google Analytics 4
+- 🏂 Adding a demo mode: one-click to create a demo session, with a demo account.
+- 🖥️ Improved support for self-hosted licence generation
 
 ### Version 4.19.3 (hotfix)
 
