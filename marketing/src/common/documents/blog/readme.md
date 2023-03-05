@@ -18,20 +18,6 @@ cover: '/assets/blog/readme/cover.jpeg'
 
 &nbsp;
 
-<p align="center">
-  <img src="./content/logos/react.png" height="65">
-  &nbsp;
-  <img src="./content/logos/ts.png" height="65">
-  &nbsp;
-  <img src="./content/logos/docker.png" height="65">
-  &nbsp;
-  <img src="./content/logos/k8s.svg" height="65">
-  &nbsp;
-  <img src="./content/logos/socketio.png" height="65">
-  &nbsp;
-  <img src="./content/logos/vite.png" height="65">
-</p>
-
 ![Retrospected.com](/content/screenshot-v5.png?raw=true 'Retrospected.com')
 
 This project is both an actual product, and also a technology demo using the latest and greatest JavaScript/TypeScript libraries of the month.
@@ -767,6 +753,6 @@ Another special thanks to Browserstack, as they allow me to test this project in
 
 Thanks to [UnDraw](https://undraw.co/) for some of the illustrations.
 
-<a href="https://www.browserstack.com/"><img src="./content/browserstack.png" width="300" height="65"></a>
+
 
 Please make your PRs from the **develop** branch, not **master**.

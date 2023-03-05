@@ -8,15 +8,18 @@ cover: '/assets/blog/feature/cover.png'
 ---
 # Encrypted Sessions
 
-:::info Pro Feature
-This feature is a Pro feature.
-:::
-
+Why should you use encrypted sessions? Because you want to keep your data private, and have it stored in a way that even Retrospected can't read. 
 ## Starting an encrypted session
 
 On the homepage, click on "Encrypted Session" (instead of "Create a new session"):
 
 ![Create Encrypted Session](/assets/blog/feature/cover.png)
+
+And some code:
+
+```
+const x = 2;
+```
 
 ## Overview
 
