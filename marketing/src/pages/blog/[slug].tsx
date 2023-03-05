@@ -8,6 +8,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { MenuItem } from '@/types';
 import LegalContent from '@/containers/Legal/LegalContent';
 import { getAllBlogs, getBlogBySlug } from '@/lib/getBlog';
+import BlogContent from '@/containers/blog/BlogContent';
+import styled from 'styled-components';
 
 type Props = {
   document: BlogDocument;
@@ -35,11 +37,17 @@ export default function Blog({ document, legals }: Props) {
         <Head>
           <title>{title}</title>
         </Head>
-        <LegalContent content={document.content} />
+        <Content>
+          <BlogContent document={document} />
+        </Content>
       </article>
     </Layout>
   );
 }
+
+const Content = styled.div`
+  padding: 20px;
+`;
 
 type Params = {
   locale?: string;
@@ -51,14 +59,14 @@ type Params = {
 export async function getStaticProps({ params, locale }: Params) {
   const legals = getAllBlogs();
   const document = getBlogBySlug(params.slug);
-  const content = await markdownToHtml(document.content || '');
+  // const content = await markdownToHtml(document.content || '');
 
   return {
     props: {
       legals,
       document: {
         ...document,
-        content,
+        // content,
       },
       ...(await serverSideTranslations(locale ?? 'en', ['common'])),
     },
