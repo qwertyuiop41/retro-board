@@ -18,17 +18,20 @@ type ImageElement = React.DetailedHTMLProps<
 
 const renderers = {
   img: (image: ImageElement) => {
+    if (!image.src) {
+      return null;
+    }
     return <ImageRenderer {...image} />;
   },
   image: (image: any) => {
-    console.log('Image: ', image);
-    return <Image src={image.src} alt={image.alt} fill />;
+    return <ImageRenderer {...image} />;
   },
   paragraph: (paragraph: any) => {
     const { node } = paragraph;
-    if (node.children[0].type === 'image') {
+
+    if (node.children[0].tagName === 'img') {
       const image = node.children[0];
-      return <ImageRenderer {...image} />;
+      return <ImageRenderer {...image.properties} />;
     }
 
     return <p>{paragraph.children}</p>;
@@ -57,28 +60,51 @@ export default function BlogContent({ document }: BlogContentProps) {
 }
 
 function ImageRenderer({ src, alt }: ImageElement) {
+  if (!src) {
+    return null;
+  }
+  const actualSource = src.split(',')[0];
+  const size = src.split(',')[1];
+  const width = size ? +size.split('x')[0] : undefined;
+  const height = size ? +size.split('x')[1] : undefined;
   return (
     <ImageContainer>
-      <Image src={src!} alt={alt!} fill />
+      <Image
+        src={actualSource!}
+        alt={alt!}
+        fill={!width && !height}
+        width={width}
+        height={height}
+      />
     </ImageContainer>
   );
 }
 
-const ImageContainer = styled.span`
+const ImageContainer = styled.div`
   display: block;
-  position: relative;
+  // position: relative;
   margin: 0 auto;
-  height: 300px;
-  aspect-ratio: 4/3;
+  // outline: 1px solid red;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  // height: 300px;
+  // aspect-ratio: 4/3;
+  padding: 0;
 
   > img {
     padding: 20px;
+    // outline: 1px solid blue;
     object-fit: contain;
+    aspect-ratio: unset;
+    max-width: 100%;
+    width: auto;
+    height: auto;
   }
 `;
 
 const Article = styled.article`
-  position: relative;
+  // position: relative;
   margin: 0 20%;
   color: rgb(41, 41, 41);
   font-size: 1.25rem;
@@ -130,6 +156,7 @@ const Article = styled.article`
     padding-left: 1.5rem;
     li {
       list-style: '- ';
+      line-height: 32px;
     }
   }
 
@@ -137,6 +164,7 @@ const Article = styled.article`
     padding-left: 1.5rem;
     li {
       list-style: decimal;
+      line-height: 32px;
     }
   }
 

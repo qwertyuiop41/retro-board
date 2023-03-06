@@ -4,7 +4,7 @@ subtitle: 'What are encrypted sessions, and why should you use them?'
 author: 'Antoine Jaussoin'
 date: '2023-03-03'
 keywords: 'blog,example'
-cover: '/assets/blog/feature/cover.png'
+cover: '/assets/blog/encrypted-sessions/card.png'
 ---
 
 Why should you use encrypted sessions? Because you want to keep your data private, and have it stored in a way that even Retrospected can't read. 
@@ -12,19 +12,18 @@ Why should you use encrypted sessions? Because you want to keep your data privat
 
 On the homepage, click on "Encrypted Session" (instead of "Create a new session"):
 
-![Create Encrypted Session](/assets/blog/feature/cover.png)
+![Create Encrypted Session](/assets/blog/encrypted-sessions/button.png,270x124)
 
-And some code:
-
-```
-const x = 2;
-```
 
 # Overview
 
 Your data (post content, action, and game title) is **encrypted** and **decrypted** **locally**, in your browser.
 
 Only the encrypted text is sent to the server, so the server never sees the clear-text data.
+
+This is how it looks on the database:
+
+![Database view](/assets/blog/encrypted-sessions/db.png,1394x214)
 
 The key is stored in the URL, after the hash sign (#), and is never sent to the server either ([why](https://stackoverflow.com/questions/3664257/why-is-the-hash-part-of-the-url-not-available-on-the-server-side)).
 
