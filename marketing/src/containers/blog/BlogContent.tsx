@@ -4,15 +4,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import styled from 'styled-components';
-import { Source_Serif_Pro } from '@next/font/google';
 import BlogTitle from './BlogTitle';
-// import { Hel } from '@next/font/google';
-
-const font = Source_Serif_Pro({
-  weight: ['200', '400', '700'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-});
+import { sourceSerifPro } from '@/common/fonts/Fonts';
 
 type BlogContentProps = {
   document: BlogDocument;
@@ -25,11 +18,6 @@ type ImageElement = React.DetailedHTMLProps<
 
 const renderers = {
   img: (image: ImageElement) => {
-    console.log('Image: ', image);
-
-    if (image.src?.includes('.svg')) {
-      return <img src={image.src} alt={image.alt} />;
-    }
     return <ImageRenderer {...image} />;
   },
   image: (image: any) => {
@@ -50,7 +38,7 @@ const renderers = {
 export default function BlogContent({ document }: BlogContentProps) {
   return (
     <>
-      <Article className={font.className}>
+      <Article className={sourceSerifPro.className}>
         <BlogTitle document={document} />
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
@@ -77,44 +65,34 @@ function ImageRenderer({ src, alt }: ImageElement) {
 }
 
 const ImageContainer = styled.span`
-  // font-family: ${font.style.fontFamily} !important;
   display: block;
   position: relative;
-  // width: 100%;
   margin: 0 auto;
   height: 300px;
   aspect-ratio: 4/3;
-  // border: 2px solid red;
 
   > img {
     padding: 20px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     object-fit: contain;
   }
 `;
 
 const Article = styled.article`
+  position: relative;
   margin: 0 20%;
   color: rgb(41, 41, 41);
+  font-size: 1.25rem;
 
   @media (max-width: 768px) {
     margin: 0 10px;
   }
 
-  position: relative;
-  ul {
-    li {
-      margin-left: 1.5rem;
-      list-style: '- ';
-    }
-  }
-
-  p:first-of-type::first-letter {
+  > p:first-of-type::first-letter {
     initial-letter: 2;
+    margin-right: 0.5rem;
   }
 
   p {
-    font-size: 20px;
     line-height: 32px;
     color: rgb(41, 41, 41);
   }
@@ -128,23 +106,61 @@ const Article = styled.article`
   }
 
   h1 {
-    font-size: 34px;
+    font-size: 1.7rem;
     font-weight: 700;
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 1.4rem;
   }
 
   h3 {
-    font-size: 28px;
+    font-size: 1.35rem;
   }
 
   h4 {
-    font-size: 26px;
+    font-size: 1.3rem;
   }
 
   h5 {
-    font-size: 1rem;
+    font-size: 1.25rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    li {
+      list-style: '- ';
+    }
+  }
+
+  ol {
+    padding-left: 1.5rem;
+    li {
+      list-style: decimal;
+    }
+  }
+
+  blockquote {
+    margin-left: -2rem;
+    padding-left: 2rem;
+    border-left: 4px solid rgb(41, 41, 41);
+    font-style: italic;
+  }
+
+  pre {
+    display: block;
+    padding: 1.5rem 0;
+    code {
+      background-color: #f6f8fa;
+      padding: 20px;
+    }
+  }
+
+  p {
+    code {
+      display: inline-block;
+      padding: 0 1rem;
+      background-color: #f6f8fa;
+    }
   }
 `;

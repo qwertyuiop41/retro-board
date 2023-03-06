@@ -1,15 +1,14 @@
 ---
-title: 'A new feature'
-subtitle: 'An example of a new feature'
+title: 'Encrypted Sessions'
+subtitle: 'What are encrypted sessions, and why should you use them?'
 author: 'Antoine Jaussoin'
 date: '2023-03-03'
 keywords: 'blog,example'
 cover: '/assets/blog/feature/cover.png'
 ---
-# Encrypted Sessions
 
 Why should you use encrypted sessions? Because you want to keep your data private, and have it stored in a way that even Retrospected can't read. 
-## Starting an encrypted session
+# Starting an encrypted session
 
 On the homepage, click on "Encrypted Session" (instead of "Create a new session"):
 
@@ -21,7 +20,7 @@ And some code:
 const x = 2;
 ```
 
-## Overview
+# Overview
 
 Your data (post content, action, and game title) is **encrypted** and **decrypted** **locally**, in your browser.
 
@@ -31,7 +30,7 @@ The key is stored in the URL, after the hash sign (#), and is never sent to the 
 
 You can then share the URL via a secure mean (email, Slack...), store it in a bookmark etc., but the encryption key will never be sent to Retrospected.
 
-## Anatomy of a URL
+# Anatomy of a URL
 
 <span style="color: blue">https://www.retrospected.com/game/<wbr />P2NWCVKNJ</span><wbr /><span style="color: green">#</span><span style="color: red">pZ0ipXFBn</span>
 
@@ -40,11 +39,11 @@ after the <span style="color: green">#</span>, is the encryption key.
 
 In the example above, only the <span style="color: blue">blue</span> part of the URL is sent to the server, never the <span style="color: red">red</span> ([source](https://stackoverflow.com/questions/3664257/why-is-the-hash-part-of-the-url-not-available-on-the-server-side)).
 
-## Encryption
+# Encryption
 
 Your content is encrypted locally using AES, with [crypto-js/aes](https://cryptojs.gitbook.io/docs/#ciphers).
 
-## Decryption
+# Decryption
 
 The content is decrypted locally, and the key is obtained from one of these sources:
 

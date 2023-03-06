@@ -14,18 +14,19 @@ export default function BlogTitle({ document }: BlogTitleProps) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.header`
+  margin-bottom: 3rem;
   h1 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 2rem;
+    line-height: 2.5rem;
     font-weight: 700;
   }
 
   h2 {
-    font-size: 22px;
+    font-size: 1.3rem;
     line-height: 28px;
     font-weight: 400;
     color: rgb(117, 117, 117);
-    margin-top: -10px;
+    margin-top: -1.5rem;
   }
 `;
