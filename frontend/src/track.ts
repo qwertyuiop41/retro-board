@@ -3,12 +3,24 @@ import { Plan, TrackingEvent } from 'common';
 import * as Sentry from '@sentry/browser';
 import config from './utils/getConfig';
 import { isProduction } from 'is-production';
+import { noop } from 'lodash';
 
 let sentryErrorCount = 0;
 
 export const initialiseAnalytics = () => {
+  console.log('GA', config.GoogleAnalyticsId, config.googleAdWordsId);
   if (isGAEnabled()) {
-    ReactGA.initialize(config.GoogleAnalyticsId);
+    ReactGA.initialize([
+      {
+        trackingId: config.GoogleAnalyticsId,
+      },
+      {
+        trackingId: config.googleAdWordsId,
+        gaOptions: {
+          name: 'aw',
+        },
+      },
+    ]);
   }
 };
 
@@ -81,6 +93,17 @@ export const trackPageView = (path: string) => {
   }
 };
 
+export const trackAdWordsConversion = () => {
+  if (isGAEnabled()) {
+    const ga = ReactGA.ga(noop);
+    ga('event', 'conversion', {
+      send_to: config.googleAdWordsEvent,
+      event_callback: noop,
+    });
+  }
+};
+
 const isGAEnabled = () => {
+  // return true;
   return isProduction() && config.hasGA;
 };
