@@ -92,6 +92,11 @@ This will run a demo version, which you can turn into a fully licenced version b
 
 ## Versions History
 
+### Version 5.0.1
+
+- Add Google Ad-Words tracking
+- Fix self-hosted licence checking URL
+
 ### Version 5.0.0
 
 - 👩‍💻 Brand new landing page, built with NextJS, separated from the main app. The app is now available at [https://app.retrospected.com](https://app.retrospected.com) and the landing page at [https://www.retrospected.com](https://www.retrospected.com).
