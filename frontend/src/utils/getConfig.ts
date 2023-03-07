@@ -57,7 +57,7 @@ function getKey(
 
 function getConfig(): Config {
   const googleAnalyticsId = getKey('GOOGLE_ANALYTICS_ID', 'NO_GA');
-  const googleAdWordsId = getKey('GOOGLE_AD_WORDS_ID', 'NO_AD_WORDS_EVENT');
+  const googleAdWordsId = getKey('GOOGLE_AD_WORDS_ID', 'NO_AD_WORDS_ID');
   const googleAdWordsEvent = getKey(
     'GOOGLE_AD_WORDS_EVENT',
     'NO_AD_WORDS_EVENT'
