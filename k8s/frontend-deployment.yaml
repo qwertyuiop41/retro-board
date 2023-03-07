@@ -22,11 +22,11 @@ spec:
               value: rb-backend-cluster-ip-service
             - name: BACKEND_PORT
               value: '3201'
-            - name: GA_ID
+            - name: GOOGLE_ANALYTICS_ID
               value: ''
             - name: GOOGLE_AD_WORDS_ID
               value: ''
-            - name: GOOGLE_AD_WORDS_EVENT
+            - name: GOOGLE_AD_WORDS_CONVERSION_ID
               value: ''
             - name: SENTRY_URL
               value: ''
