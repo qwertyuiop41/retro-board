@@ -6,7 +6,7 @@ BACKEND_PORT="${BACKEND_PORT:-3201}" \
 envsubst '${BACKEND_HOST} ${BACKEND_PORT}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
 
 CONFIG_FILE='/usr/share/nginx/html/config.js'
-PREFIX='RETRO_'
+PREFIX='FRONTEND_'
 
 makeSedCommands() {
   printenv | \
