@@ -54,6 +54,4 @@ run-local:
 	docker run \
 	  --env BACKEND_HOST=localhost \
     --env BACKEND_PORT=8081 \
-		--env FRONTEND_GOOGLE_ANALYTICS_ID=G-FUBAR \
-		--env FRONTEND_GOOGLE_AD_WORDS_ID=AW-FUBARTWO \
 		-it --rm -p 3100:80 retrospected/frontend:local

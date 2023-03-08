@@ -17,7 +17,7 @@ echo "Configuring frontend with environment variables..."
 
 # Creates a file with the environment variables that start with FRONTEND_
 echo "    window.__env__ = {" > "${CONFIG_FILE}"
-jq -n 'env' | grep "\"$PREFIX" >> "${CONFIG_FILE}"
+jq -n 'env' | { grep "\"$PREFIX" || true; }>> "${CONFIG_FILE}"
 echo "    };" >> "${CONFIG_FILE}"
 
 echo "> Finished configuring frontend with environment variables."
