@@ -49,7 +49,7 @@ function getConfig(): Config {
 
   // Special cases
   if (!config.DEFAULT_LANGUAGE || config.DEFAULT_LANGUAGE.length !== 5) {
-    console.error(
+    console.warn(
       'Your default language (DEFAULT_LANGUAGE) is not in the right format. The right format should be a string of 5 characters, for example: en-GB, fr-FR, etc.'
     );
     config.DEFAULT_LANGUAGE = 'en-GB';
