@@ -14,6 +14,6 @@ jq -n 'env' | grep "\"$PREFIX" >> "${CONFIG_FILE}"
 echo "    };" >> "${CONFIG_FILE}"
 sed -i "s#\"${PREFIX}#    \"#g" "${CONFIG_FILE}"
 
-sed -i -e "/CONFIG_PLACEHOLDER/r ${CONFIG_FILE}" ${HTML_FILE}
+sed -i -e "/RUN-TIME CONFIGURATION/r ${CONFIG_FILE}" ${HTML_FILE}
 
 exec "$@"
