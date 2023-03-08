@@ -49,14 +49,6 @@ services:
     environment:
       BACKEND_HOST: backend
       BACKEND_PORT: 3201
-      FRONTEND_GOOGLE_ANALYTICS_ID: ''
-      FRONTEND_GOOGLE_AD_WORDS_ID: ''
-      FRONTEND_GOOGLE_AD_WORDS_CONVERSION: ''
-      FRONTEND_SENTRY_URL: ''
-      FRONTEND_GIPHY_API_KEY: ''
-      FRONTEND_DEFAULT_LANGUAGE: en-GB
-      FRONTEND_STRIPE_KEY: ''
-      FRONTEND_MARKETING_ROOT: https://www-beta.retrospected.com
     restart: unless-stopped
     logging:
       driver: 'json-file'

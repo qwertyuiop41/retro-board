@@ -5,7 +5,7 @@ BACKEND_HOST="${BACKEND_HOST:-backend}" \
 BACKEND_PORT="${BACKEND_PORT:-3201}" \
 envsubst '${BACKEND_HOST} ${BACKEND_PORT}' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf
 
-CONFIG_FILE='/usr/share/nginx/html/config.js'
+CONFIG_FILE='./config.tmp'
 HTML_FILE='/usr/share/nginx/html/index.html'
 PREFIX='FRONTEND_'
 
