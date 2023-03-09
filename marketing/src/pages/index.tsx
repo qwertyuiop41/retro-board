@@ -37,12 +37,16 @@ export default function HomePage({ legals }: HomePageProps) {
       <HowItWorks />
       <AnalyticsTool />
       <Dashboard />
-      {/* <Testimonials /> */}
+
       <CombinedSection>
         <Integrations />
+      </CombinedSection>
+      <Testimonials />
+      <CombinedSection>
         <Pricing />
         <CornerPattern />
       </CombinedSection>
+
       {/* <NewsFeed /> */}
       <Faq />
       <CallToAction />
