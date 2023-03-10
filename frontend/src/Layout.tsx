@@ -28,6 +28,7 @@ import useIsPro from 'auth/useIsPro';
 import ProButton from 'components/ProButton';
 import { useTranslation } from 'react-i18next';
 import { Welcome } from 'views/Welcome';
+import React from 'react';
 
 const Home = lazy(() => import('./views/Home'));
 const Game = lazy(() => import('./views/Game'));

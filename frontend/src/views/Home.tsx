@@ -19,6 +19,7 @@ import { useSnackbar } from 'notistack';
 import TrialPrompt from './home/TrialPrompt';
 import HowDoesItWorkButton from '../components/HowDoesItWorkButton';
 import { useTranslation } from 'react-i18next';
+import React from 'react';
 
 const useStyles = makeStyles({
   media: {

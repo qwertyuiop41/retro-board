@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import * as Sentry from '@sentry/browser';
 import ErrorBoundaryContent from 'ErrorBoundaryContent';
+import React from 'react';
 
 interface ErrorBoundaryState {
   errored: boolean;

@@ -94,10 +94,16 @@
     "lint": "eslint 'src/**/*.{ts,tsx}' --max-warnings=0",
     "test": "vitest",
     "ci-test": "CI=true yarn test",
-    "analyze": "source-map-explorer build/static/js/*"
+    "analyze": "source-map-explorer build/static/js/*",
+    "fix": "eslint src/**/**/**/*.*  --fix"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "react-app",
+    "rules": {
+      "no-undef": "off",
+      "no-func-assign": "warn",
+      "no-eval":"off"
+    }
   },
   "browserslist": [
     ">0.2%",

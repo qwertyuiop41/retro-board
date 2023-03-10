@@ -14,6 +14,7 @@ import { Suspense } from 'react';
 import { CodeSplitLoader } from './CodeSplitLoader';
 import QuotaManager from './auth/QuotaManager';
 import { ConfirmProvider } from 'material-ui-confirm';
+import React from 'react';
 
 function App() {
   return (

@@ -1,4 +1,5 @@
 import ReactGA from 'react-ga4';
+// 下面的代码没有用到React对象，为什么也要将其import进来
 import { Plan, TrackingEvent } from 'common';
 import * as Sentry from '@sentry/browser';
 import config from './utils/getConfig';

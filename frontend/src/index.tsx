@@ -6,6 +6,7 @@ import App from './App';
 import { initialiseAnalytics, initialiseSentry } from './track';
 import * as serviceWorker from './serviceWorker';
 import 'emoji-mart/css/emoji-mart.css';
+import React from 'react';
 
 // Hack because a dependency requires module.hot to be defined
 window.module = {

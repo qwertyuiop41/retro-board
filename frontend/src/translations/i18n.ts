@@ -1,33 +1,10 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
-import resourcesToBackend from 'i18next-resources-to-backend';
-import config from 'utils/getConfig';
-import { isProduction } from 'is-production';
-
-i18n
-  .use(
-    resourcesToBackend((language, _, callback) => {
-      import(`./locales/${language}.json`)
-        .then((resources) => {
-          callback(null, resources);
-        })
-        .catch((error) => {
-          callback(error, null);
-        });
-    })
-  )
-  .use(LanguageDetector)
-  .use(initReactI18next)
-  .init({
-    fallbackLng: config.DEFAULT_LANGUAGE,
-    debug: !isProduction(),
-    defaultNS: 'ns1',
-    ns: 'ns1',
-
-    interpolation: {
-      escapeValue: false, // not needed for react as it escapes by default
-    },
-  });
-
-export default i18n;
+import i18n from'i18next';
+import{initReactI18next}from'react-i18next';
+import LanguageDetector from'i18next-browser-languagedetector';
+import resourcesToBackend from'i18next-resources-to-backend';
+import config from'utils/getConfig';
+import{isProduction}from'is-production';
+function cov_2qtdi5qa5z(){var path="/Users/siyiwang/Desktop/wsy/retro-board/frontend/src/translations/i18n.ts";var hash="d44bdd9fb3fe584ea3275eb3874d274d5add407c";var global=window;var gcv="__coverage__";var coverageData={path:"/Users/siyiwang/Desktop/wsy/retro-board/frontend/src/translations/i18n.ts",statementMap:{"0":{start:{line:8,column:0},end:{line:31,column:5}},"1":{start:{line:11,column:6},end:{line:17,column:11}},"2":{start:{line:13,column:10},end:{line:13,column:36}},"3":{start:{line:16,column:10},end:{line:16,column:32}}},fnMap:{"0":{name:"(anonymous_0)",decl:{start:{line:10,column:23},end:{line:10,column:24}},loc:{start:{line:10,column:50},end:{line:18,column:5}},line:10},"1":{name:"(anonymous_1)",decl:{start:{line:12,column:14},end:{line:12,column:15}},loc:{start:{line:12,column:29},end:{line:14,column:9}},line:12},"2":{name:"(anonymous_2)",decl:{start:{line:15,column:15},end:{line:15,column:16}},loc:{start:{line:15,column:26},end:{line:17,column:9}},line:15}},branchMap:{},s:{"0":0,"1":0,"2":0,"3":0},f:{"0":0,"1":0,"2":0},b:{},_coverageSchema:"1a1c01bbd47fc00a2c39e90264f33305004495a9",hash:"d44bdd9fb3fe584ea3275eb3874d274d5add407c"};var coverage=global[gcv]||(global[gcv]={});if(!coverage[path]||coverage[path].hash!==hash){coverage[path]=coverageData;}var actualCoverage=coverage[path];{// @ts-ignore
+cov_2qtdi5qa5z=function(){return actualCoverage;};}return actualCoverage;}cov_2qtdi5qa5z();cov_2qtdi5qa5z().s[0]++;i18n.use(resourcesToBackend((language,_,callback)=>{cov_2qtdi5qa5z().f[0]++;cov_2qtdi5qa5z().s[1]++;import(`./locales/${language}.json`).then(resources=>{cov_2qtdi5qa5z().f[1]++;cov_2qtdi5qa5z().s[2]++;callback(null,resources);}).catch(error=>{cov_2qtdi5qa5z().f[2]++;cov_2qtdi5qa5z().s[3]++;callback(error,null);});})).use(LanguageDetector).use(initReactI18next).init({fallbackLng:config.DEFAULT_LANGUAGE,debug:!isProduction(),defaultNS:'ns1',ns:'ns1',interpolation:{escapeValue:false// not needed for react as it escapes by default
+}});export default i18n;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6WyJjb3ZfMnF0ZGk1cWE1eiIsImFjdHVhbENvdmVyYWdlIiwiaTE4biIsImluaXRSZWFjdEkxOG5leHQiLCJMYW5ndWFnZURldGVjdG9yIiwicmVzb3VyY2VzVG9CYWNrZW5kIiwiY29uZmlnIiwiaXNQcm9kdWN0aW9uIiwicyIsInVzZSIsImxhbmd1YWdlIiwiXyIsImNhbGxiYWNrIiwiZiIsInRoZW4iLCJyZXNvdXJjZXMiLCJjYXRjaCIsImVycm9yIiwiaW5pdCIsImZhbGxiYWNrTG5nIiwiREVGQVVMVF9MQU5HVUFHRSIsImRlYnVnIiwiZGVmYXVsdE5TIiwibnMiLCJpbnRlcnBvbGF0aW9uIiwiZXNjYXBlVmFsdWUiXSwic291cmNlcyI6WyJpMThuLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBpMThuIGZyb20gJ2kxOG5leHQnO1xuaW1wb3J0IHsgaW5pdFJlYWN0STE4bmV4dCB9IGZyb20gJ3JlYWN0LWkxOG5leHQnO1xuaW1wb3J0IExhbmd1YWdlRGV0ZWN0b3IgZnJvbSAnaTE4bmV4dC1icm93c2VyLWxhbmd1YWdlZGV0ZWN0b3InO1xuaW1wb3J0IHJlc291cmNlc1RvQmFja2VuZCBmcm9tICdpMThuZXh0LXJlc291cmNlcy10by1iYWNrZW5kJztcbmltcG9ydCBjb25maWcgZnJvbSAndXRpbHMvZ2V0Q29uZmlnJztcbmltcG9ydCB7IGlzUHJvZHVjdGlvbiB9IGZyb20gJ2lzLXByb2R1Y3Rpb24nO1xuXG5pMThuXG4gIC51c2UoXG4gICAgcmVzb3VyY2VzVG9CYWNrZW5kKChsYW5ndWFnZSwgXywgY2FsbGJhY2spID0+IHtcbiAgICAgIGltcG9ydChgLi9sb2NhbGVzLyR7bGFuZ3VhZ2V9Lmpzb25gKVxuICAgICAgICAudGhlbigocmVzb3VyY2VzKSA9PiB7XG4gICAgICAgICAgY2FsbGJhY2sobnVsbCwgcmVzb3VyY2VzKTtcbiAgICAgICAgfSlcbiAgICAgICAgLmNhdGNoKChlcnJvcikgPT4ge1xuICAgICAgICAgIGNhbGxiYWNrKGVycm9yLCBudWxsKTtcbiAgICAgICAgfSk7XG4gICAgfSlcbiAgKVxuICAudXNlKExhbmd1YWdlRGV0ZWN0b3IpXG4gIC51c2UoaW5pdFJlYWN0STE4bmV4dClcbiAgLmluaXQoe1xuICAgIGZhbGxiYWNrTG5nOiBjb25maWcuREVGQVVMVF9MQU5HVUFHRSxcbiAgICBkZWJ1ZzogIWlzUHJvZHVjdGlvbigpLFxuICAgIGRlZmF1bHROUzogJ25zMScsXG4gICAgbnM6ICduczEnLFxuXG4gICAgaW50ZXJwb2xhdGlvbjoge1xuICAgICAgZXNjYXBlVmFsdWU6IGZhbHNlLCAvLyBub3QgbmVlZGVkIGZvciByZWFjdCBhcyBpdCBlc2NhcGVzIGJ5IGRlZmF1bHRcbiAgICB9LFxuICB9KTtcblxuZXhwb3J0IGRlZmF1bHQgaTE4bjtcbiJdLCJtYXBwaW5ncyI6IjZ6Q0FlWTtBQUFBQSxjQUFBLFNBQUFBLENBQUEsU0FBQUMsY0FBQSxXQUFBQSxjQUFBLEVBQUFELGNBQUEsR0FmWixNQUFPLENBQUFFLElBQUksS0FBTSxTQUFTLENBQzFCLE9BQVNDLGdCQUFnQixLQUFRLGVBQWUsQ0FDaEQsTUFBTyxDQUFBQyxnQkFBZ0IsS0FBTSxrQ0FBa0MsQ0FDL0QsTUFBTyxDQUFBQyxrQkFBa0IsS0FBTSw4QkFBOEIsQ0FDN0QsTUFBTyxDQUFBQyxNQUFNLEtBQU0saUJBQWlCLENBQ3BDLE9BQVNDLFlBQVksS0FBUSxlQUFlLENBQUNQLGNBQUEsR0FBQVEsQ0FBQSxNQUU3Q04sSUFBSSxDQUNETyxHQUFHLENBQ0ZKLGtCQUFrQixDQUFDLENBQUNLLFFBQVEsQ0FBRUMsQ0FBQyxDQUFFQyxRQUFRLEdBQUssQ0FBQVosY0FBQSxHQUFBYSxDQUFBLE1BQUFiLGNBQUEsR0FBQVEsQ0FBQSxNQUM1QyxNQUFNLENBQUUsYUFBWUUsUUFBUyxPQUFNLENBQUMsQ0FDakNJLElBQUksQ0FBRUMsU0FBUyxFQUFLLENBQUFmLGNBQUEsR0FBQWEsQ0FBQSxNQUFBYixjQUFBLEdBQUFRLENBQUEsTUFDbkJJLFFBQVEsQ0FBQyxJQUFJLENBQUVHLFNBQVMsQ0FBQyxDQUMzQixDQUFDLENBQUMsQ0FDREMsS0FBSyxDQUFFQyxLQUFLLEVBQUssQ0FBQWpCLGNBQUEsR0FBQWEsQ0FBQSxNQUFBYixjQUFBLEdBQUFRLENBQUEsTUFDaEJJLFFBQVEsQ0FBQ0ssS0FBSyxDQUFFLElBQUksQ0FBQyxDQUN2QixDQUFDLENBQUMsQ0FDTixDQUFDLENBQUMsQ0FDSCxDQUNBUixHQUFHLENBQUNMLGdCQUFnQixDQUFDLENBQ3JCSyxHQUFHLENBQUNOLGdCQUFnQixDQUFDLENBQ3JCZSxJQUFJLENBQUMsQ0FDSkMsV0FBVyxDQUFFYixNQUFNLENBQUNjLGdCQUFnQixDQUNwQ0MsS0FBSyxDQUFFLENBQUNkLFlBQVksRUFBRSxDQUN0QmUsU0FBUyxDQUFFLEtBQUssQ0FDaEJDLEVBQUUsQ0FBRSxLQUFLLENBRVRDLGFBQWEsQ0FBRSxDQUNiQyxXQUFXLENBQUUsS0FBTztBQUN0QixDQUNGLENBQUMsQ0FBQyxDQUVKLGNBQWUsQ0FBQXZCLElBQUkifQ==

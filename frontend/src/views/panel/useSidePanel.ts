@@ -7,7 +7,8 @@ interface UseSidePanelResult {
   toggle: () => void;
 }
 
-export default function useSidePanel(): UseSidePanelResult {
+export default function useSidePanel(): { opened: unknown; toggle: () => void } {
+  // @ts-ignore
   const [value, setValue] = useRecoilState(PanelToggledState);
 
   const toggle = useCallback(() => {

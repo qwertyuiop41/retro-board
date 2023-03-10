@@ -3,6 +3,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import React from 'react';
 
 type ErrorBoundaryContentProps = {
   onHistoryChange: () => void;
